@@ -15,6 +15,8 @@ if not defined VS120COMNTOOLS (
     )
 )
 
+set PrivateCoreCLRFeed=D:\GitHub\AlexGhiondea\coreclr\binaries\Product\x64\debug\.nuget
+
 :: Log build command line
 set _buildprefix=echo
 set _buildpostfix=^> "%~dp0msbuild.log"

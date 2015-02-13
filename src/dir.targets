@@ -62,13 +62,14 @@
     <RestorePackages Condition="'$(RestorePackages)' == '' and Exists('$(PackagesConfig)')">true</RestorePackages>
     <RestorePackagesSemaphore>$(PackagesDir)$(MSBuildProjectFile).package.restored</RestorePackagesSemaphore>
   </PropertyGroup>
-
+  
   <Target Name="RestorePackages" 
+          DependsOnTargets="ConfigureNugetPackageConfig"
           BeforeTargets="ResolveNuGetPackages"
           Inputs="$(PackagesConfig)"
           Outputs="$(RestorePackagesSemaphore)"
           Condition="'$(RestorePackages)' == 'true'">
-    <Exec Command="$(NugetRestoreCommand) &quot;$(PackagesConfig)&quot;" StandardOutputImportance="Low" />
+    <Exec Command="$(NugetRestoreCommand) $(NuGetConfigCommandLine) &quot;$(PackagesConfig)&quot;" StandardOutputImportance="Low" />
     <Touch Files="$(RestorePackagesSemaphore)" AlwaysCreate="true" />
   </Target>
 
@@ -87,17 +88,40 @@
     <RunTestsForProject Condition="'$(BuildingInsideVisualStudio)' == 'True'">False</RunTestsForProject>
   </PropertyGroup>
 
+  <Target Name="CreatePrivateNugetPackageConfig">
+    <Message Text="Creating the private nuget.config" />
+    <Delete Files="$(NuGetPrivateConfigFile)" Condition="Exists('$(NuGetPrivateConfigFile)')" />
+    <Copy SourceFiles="$(NuGetConfigFile)" DestinationFiles="$(NuGetPrivateConfigFile)" />
+
+    <!-- Add the feed passed as an argument -->
+    <Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Add -Name &quot;private dotnet-coreclr&quot; -Source &quot;$(PrivateCoreCLRFeed)&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />
+    <!-- Disable the official feed -->
+    <Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Disable -Name &quot;myget.org dotnet-coreclr&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />
+  </Target>
+  
+  <Target Name="ConfigureNugetPackageConfig" >
+    <Message Text="Private feed='$(PrivateCoreCLRFeed)' " />
+    <CallTarget Targets="CreatePrivateNugetPackageConfig" Condition="'$(PrivateCoreCLRFeed)'!=''" />
+    
+    <!-- Update the NuGetConfigCommandLine to the one that contains the private feed -->
+    <PropertyGroup>
+      <NuGetConfigCommandLine Condition="'$(PrivateCoreCLRFeed)'==''">$(NuGetConfigCommandLine) -ConfigFile "$(NuGetConfigFile)"</NuGetConfigCommandLine>
+      <NuGetConfigCommandLine Condition="'$(PrivateCoreCLRFeed)'!=''">$(NuGetConfigCommandLine) -ConfigFile "$(NuGetPrivateConfigFile)"</NuGetConfigCommandLine>
+    </PropertyGroup>    
+  </Target>
+  
   <PropertyGroup>
     <TestRuntimePackageConfig>$(ToolsDir)test-runtime\packages.config</TestRuntimePackageConfig>
     <TestRuntimePackageSemaphore>$(PackagesDir)Test-Runtime.package.restored</TestRuntimePackageSemaphore>
   </PropertyGroup>
 
   <Target Name="RestoreTestRuntimePackage" 
+          DependsOnTargets="ConfigureNugetPackageConfig"
           BeforeTargets="ResolveNuGetPackages"
           Inputs="$(TestRuntimePackageConfig)"
           Outputs="$(TestRuntimePackageSemaphore)"
           Condition="'$(IsTestProject)' == 'true'">
-    <Exec Command="$(NugetRestoreCommand) &quot;$(TestRuntimePackageConfig)&quot;" StandardOutputImportance="Low" />
+    <Exec Command="$(NugetRestoreCommand) $(NuGetConfigCommandLine) &quot;$(TestRuntimePackageConfig)&quot;" StandardOutputImportance="Low" />
     <Touch Files="$(TestRuntimePackageSemaphore)" AlwaysCreate="true" />
   </Target>
 

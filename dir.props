@@ -17,13 +17,16 @@
   <!-- Common nuget properties -->
   <PropertyGroup>
     <NuGetToolPath>$(PackagesDir)NuGet.exe</NuGetToolPath>
+    
+    <!-- If we don't have a private feed for CoreCLR then use the current nuget.config file-->
     <NuGetConfigFile>$(SourceDir)NuGet.Config</NuGetConfigFile>
+    <!-- If we have a private feed for CoreCLR we are going to create the nuget.private.config file -->
+    <NuGetPrivateConfigFile>$(SourceDir)NuGet.Private.Config</NuGetPrivateConfigFile>
     <NuGetConfigCommandLine>-ConfigFile "$(NuGetConfigFile)"</NuGetConfigCommandLine>
 
     <NugetRestoreCommand>"$(NuGetToolPath)"</NugetRestoreCommand>
     <NugetRestoreCommand>$(NugetRestoreCommand) install</NugetRestoreCommand>
     <NugetRestoreCommand>$(NugetRestoreCommand) -OutputDirectory "$(PackagesDir.TrimEnd('\'))"</NugetRestoreCommand>
-    <NugetRestoreCommand>$(NugetRestoreCommand) $(NuGetConfigCommandLine)</NugetRestoreCommand>
   </PropertyGroup>
   
   <!-- Coverage options -->
