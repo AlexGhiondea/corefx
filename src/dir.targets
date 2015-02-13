@@ -93,6 +93,8 @@
     <Delete Files="$(NuGetPrivateConfigFile)" Condition="Exists('$(NuGetPrivateConfigFile)')" />
     <Copy SourceFiles="$(NuGetConfigFile)" DestinationFiles="$(NuGetPrivateConfigFile)" />
 
+    <RemoveDir Directories="$(PackagesDir)\Microsoft.DotNet.CoreCLR.1.0.0-prerelease" ContinueOnError="true"/>
+    
     <!-- Add the feed passed as an argument -->
     <Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Add -Name &quot;private dotnet-coreclr&quot; -Source &quot;$(PrivateCoreCLRFeed)&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />
     <!-- Disable the official feed -->
