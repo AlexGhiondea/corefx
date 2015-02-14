@@ -21,7 +21,7 @@
     <!-- If we don't have a private feed for CoreCLR then use the current nuget.config file-->
     <NuGetConfigFile>$(SourceDir)NuGet.Config</NuGetConfigFile>
     <!-- If we have a private feed for CoreCLR we are going to create the nuget.private.config file -->
-    <NuGetPrivateConfigFile>$(SourceDir)NuGet.Private.Config</NuGetPrivateConfigFile>
+    <NuGetPrivateConfigFile>$(PackagesDir)NuGet.Private.Config</NuGetPrivateConfigFile>
     <NuGetConfigCommandLine>-ConfigFile "$(NuGetConfigFile)"</NuGetConfigCommandLine>
 
     <NugetRestoreCommand>"$(NuGetToolPath)"</NugetRestoreCommand>

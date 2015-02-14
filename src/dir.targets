@@ -64,7 +64,6 @@
   </PropertyGroup>
   
   <Target Name="RestorePackages" 
-          DependsOnTargets="ConfigureNugetPackageConfig"
           BeforeTargets="ResolveNuGetPackages"
           Inputs="$(PackagesConfig)"
           Outputs="$(RestorePackagesSemaphore)"
@@ -90,18 +89,19 @@
 
   <Target Name="CreatePrivateNugetPackageConfig">
     <Message Text="Creating the private nuget.config" />
-    <Delete Files="$(NuGetPrivateConfigFile)" Condition="Exists('$(NuGetPrivateConfigFile)')" />
-    <Copy SourceFiles="$(NuGetConfigFile)" DestinationFiles="$(NuGetPrivateConfigFile)" />
+    <Delete Files="$(NuGetPrivateConfigFile)" Condition="Exists('$(NuGetPrivateConfigFile)')" ContinueOnError="true" />
+    <Copy SourceFiles="$(NuGetConfigFile)" DestinationFiles="$(NuGetPrivateConfigFile)" ContinueOnError="true" />
 
-    <RemoveDir Directories="$(PackagesDir)\Microsoft.DotNet.CoreCLR.1.0.0-prerelease" ContinueOnError="true"/>
+    <Message Text="Need to force the restore of the testruntime package" />
+    <Delete Files="$(TestRuntimePackageSemaphore)" ContinueOnError="true" />
     
     <!-- Add the feed passed as an argument -->
     <Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Add -Name &quot;private dotnet-coreclr&quot; -Source &quot;$(PrivateCoreCLRFeed)&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />
     <!-- Disable the official feed -->
-    <Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Disable -Name &quot;myget.org dotnet-coreclr&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />
+    <!--<Exec ContinueOnError="true" Command="$(NuGetToolPath) Sources Disable -Name &quot;myget.org dotnet-coreclr&quot; -ConfigFile &quot;$(NuGetPrivateConfigFile)&quot;" />-->
   </Target>
   
-  <Target Name="ConfigureNugetPackageConfig" >
+  <Target Name="ConfigureNugetPackageConfig" BeforeTargets="Build" >
     <Message Text="Private feed='$(PrivateCoreCLRFeed)' " />
     <CallTarget Targets="CreatePrivateNugetPackageConfig" Condition="'$(PrivateCoreCLRFeed)'!=''" />
     
@@ -118,7 +118,6 @@
   </PropertyGroup>
 
   <Target Name="RestoreTestRuntimePackage" 
-          DependsOnTargets="ConfigureNugetPackageConfig"
           BeforeTargets="ResolveNuGetPackages"
           Inputs="$(TestRuntimePackageConfig)"
           Outputs="$(TestRuntimePackageSemaphore)"
