@@ -1221,6 +1221,14 @@ namespace System
         public Lazy(System.Func<T> valueFactory, TMetadata metadata, System.Threading.LazyThreadSafetyMode mode) { }
         public TMetadata Metadata { get { return default(TMetadata); } }
     }
+    public abstract partial class MarshalByRefObject
+    {
+        protected MarshalByRefObject() { }
+//REMOTING        public virtual System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType) { throw null; }
+        public object GetLifetimeService() { throw null; }
+        public virtual object InitializeLifetimeService() { throw null; }
+        protected System.MarshalByRefObject MemberwiseClone(bool cloneIdentity) { throw null; }
+    }
     public partial class MemberAccessException : System.Exception
     {
         public MemberAccessException() { }
