@@ -180,4 +180,72 @@
   <data name="PropertyCategoryWindowStyle" xml:space="preserve">
     <value>Window Style</value>
   </data>
+  <!-- To be moved -->
+
+  <data name="Async_AsyncEventArgs_Cancelled" xml:space="preserve">
+    <value>True if operation was cancelled.</value>
+  </data>
+  <data name="Async_AsyncEventArgs_Error" xml:space="preserve">
+    <value>Exception that occurred during operation.  Null if no error.</value>
+  </data>
+  <data name="Async_AsyncEventArgs_UserState" xml:space="preserve">
+    <value>User-supplied state to identify operation.</value>
+  </data>
+  <data name="Async_ExceptionOccurred" xml:space="preserve">
+    <value>An exception occurred during the operation, making the result invalid.  Check InnerException for exception details.</value>
+  </data> 
+  <data name="Async_OperationCancelled" xml:space="preserve">
+    <value>Operation has been cancelled.</value>
+  </data> 
+  <data name="Async_OperationAlreadyCompleted" xml:space="preserve">
+    <value>This operation has already had OperationCompleted called on it and further calls are illegal.</value>
+  </data> 
+  <data name="Async_ProgressChangedEventArgs_ProgressPercentage" xml:space="preserve">
+    <value>Percentage progress made in operation.</value>
+  </data> 
+  <data name="Async_ProgressChangedEventArgs_UserState" xml:space="preserve">
+    <value>User-supplied state to identify operation.</value>
+  </data> 
+  <data name="Async_NullDelegate" xml:space="preserve">
+    <value>A non-null SendOrPostCallback must be supplied.</value>
+  </data>
+  <data name="ISupportInitializeDescr" xml:space="preserve">
+    <value>Specifies support for transacted initialization.</value>
+  </data>
+  <data name="BackgroundWorker_Desc" xml:space="preserve">
+    <value>Executes an operation on a separate thread.</value>
+  </data>
+  <data name="BackgroundWorker_CancellationPending" xml:space="preserve">
+    <value>Has the user attempted to cancel the operation? To be accessed from DoWork event handler.</value>
+  </data>
+  <data name="BackgroundWorker_IsBusy" xml:space="preserve">
+    <value>Is the worker still currently working on a background operation?</value>
+  </data>
+  <data name="BackgroundWorker_ProgressChanged" xml:space="preserve">
+    <value>Raised when the worker thread indicates that some progress has been made.</value>
+  </data>
+  <data name="BackgroundWorker_WorkerDoesntReportProgress" xml:space="preserve">
+    <value>This BackgroundWorker states that it doesn't report progress. Modify WorkerReportsProgress to state that it does report progress.</value>
+  </data>
+  <data name="BackgroundWorker_RunWorkerCompleted" xml:space="preserve">
+    <value>Raised when the worker has completed (either through success, failure, or cancellation).</value>
+  </data>
+  <data name="BackgroundWorker_WorkerReportsProgress" xml:space="preserve">
+    <value>Whether the worker will report progress.</value>
+  </data>
+  <data name="BackgroundWorker_WorkerSupportsCancellation" xml:space="preserve">
+    <value>Whether the worker supports cancellation.</value>
+  </data>
+  <data name="PropertyCategoryAsynchronous" xml:space="preserve">
+    <value>Asynchronous</value>
+  </data>
+  <data name="BackgroundWorker_Desc" xml:space="preserve">
+    <value>Executes an operation on a separate thread.</value>
+  </data>
+  <data name="BackgroundWorker_DoWorkEventArgs_Argument" xml:space="preserve">
+    <value>Argument passed into the worker handler from BackgroundWorker.RunWorkerAsync.</value>
+  </data>
+  <data name="BackgroundWorker_DoWorkEventArgs_Result" xml:space="preserve">
+    <value>Result from the worker function.</value>
+  </data>
 </root>
