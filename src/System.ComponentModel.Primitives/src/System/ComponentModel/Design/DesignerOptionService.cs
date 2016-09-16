@@ -55,7 +55,7 @@ namespace System.ComponentModel.Design {
             }
 
             if (name.Length == 0) {
-                throw new ArgumentException(SR.GetString(SR.InvalidArgument, name.Length.ToString(CultureInfo.CurrentCulture), (0).ToString(CultureInfo.CurrentCulture)), "name.Length");
+                throw new ArgumentException(SR.Format(SR.InvalidArgument, name.Length.ToString(CultureInfo.CurrentCulture), (0).ToString(CultureInfo.CurrentCulture)), "name.Length");
             }
 
             return new DesignerOptionCollection(this, parent, name, value);
@@ -133,7 +133,7 @@ namespace System.ComponentModel.Design {
         ///     properties if all the branch's children.  
         /// </devdoc>
         [TypeConverter(typeof(DesignerOptionConverter))]
-        //[Editor("", "System.Drawing.Design.UITypeEditor, " + AssemblyRef.SystemDrawing)]
+        [Editor("", "System.Drawing.Design.UITypeEditor, " + AssemblyRef.SystemDrawing)]
         public sealed class DesignerOptionCollection : IList {
 
             private DesignerOptionService           _service;
@@ -525,7 +525,7 @@ namespace System.ComponentModel.Design {
 
             public override object ConvertTo(ITypeDescriptorContext cxt, CultureInfo culture, object value, Type destinationType) {
                 if (destinationType == typeof(string)) {
-                    return SR.GetString(SR.CollectionConverterText);
+                    return SR.CollectionConverterText;
                 }
                 return base.ConvertTo(cxt, culture, value, destinationType);
             }

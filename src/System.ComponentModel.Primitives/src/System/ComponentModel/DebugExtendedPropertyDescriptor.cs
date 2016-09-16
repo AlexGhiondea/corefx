@@ -153,7 +153,7 @@ namespace System.ComponentModel {
                 if (site != null) {
                     string providerName = site.Name;
                     if (providerName != null && providerName.Length > 0) {
-                        name = SR.GetString(SR.MetaExtenderName, name, providerName);
+                        name = SR.Format(SR.MetaExtenderName, name, providerName);
                     }
                 }
                 return name;

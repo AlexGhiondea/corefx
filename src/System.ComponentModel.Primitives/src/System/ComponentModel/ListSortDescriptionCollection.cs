@@ -39,7 +39,7 @@ namespace System.ComponentModel {
                 return (ListSortDescription) sorts[index];
             }
             set {
-                throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+                throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
             }
         }
 
@@ -72,7 +72,7 @@ namespace System.ComponentModel {
                 return this[index];
             }
             set {
-                throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+                throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
             }
         }
 
@@ -80,14 +80,14 @@ namespace System.ComponentModel {
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         int IList.Add(object value) {
-            throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+            throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
         }
 
         /// <devdoc>
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         void IList.Clear() {
-            throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+            throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
         }
 
         /// <devdoc>
@@ -108,21 +108,21 @@ namespace System.ComponentModel {
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         void IList.Insert(int index, object value) {
-            throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+            throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
         }
 
         /// <devdoc>
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         void IList.Remove(object value) {
-            throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+            throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
         }
 
         /// <devdoc>
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         void IList.RemoveAt(int index) {
-            throw new InvalidOperationException(SR.GetString(SR.CantModifyListSortDescriptionCollection));
+            throw new InvalidOperationException(SR.CantModifyListSortDescriptionCollection);
         }
 
         // ICollection

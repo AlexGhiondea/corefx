@@ -236,14 +236,14 @@ namespace System.ComponentModel
         {
             if( string.IsNullOrEmpty(mask) )
             {
-                throw new ArgumentException( SR.GetString( SR.MaskedTextProviderMaskNullOrEmpty), "mask" );
+                throw new ArgumentException( SR.Format( SR.MaskedTextProviderMaskNullOrEmpty), "mask" );
             }
 
             foreach( char c in mask )
             {
                 if( !IsPrintableChar( c ) )
                 {
-                    throw new ArgumentException( SR.GetString( SR.MaskedTextProviderMaskInvalidChar ) );
+                    throw new ArgumentException( SR.MaskedTextProviderMaskInvalidChar );
                 }
             }
 
@@ -753,13 +753,13 @@ namespace System.ComponentModel
                 if( value == this.promptChar )
                 {
                     // Prompt and password chars must be different.
-                    throw new InvalidOperationException( SR.GetString(SR.MaskedTextProviderPasswordAndPromptCharError) );
+                    throw new InvalidOperationException( SR.MaskedTextProviderPasswordAndPromptCharError );
                 }
 
                 if( !IsValidPasswordChar(value) && (value != nullPasswordChar))
                 {
                     // Same message as in SR.MaskedTextBoxInvalidCharError.
-                    throw new ArgumentException( SR.GetString(SR.MaskedTextProviderInvalidCharError) );
+                    throw new ArgumentException( SR.MaskedTextProviderInvalidCharError );
                 }
 
                 if (value != this.passwordChar)
@@ -784,13 +784,13 @@ namespace System.ComponentModel
                 if( value == this.passwordChar )
                 {
                     // Prompt and password chars must be different.
-                    throw new InvalidOperationException( SR.GetString(SR.MaskedTextProviderPasswordAndPromptCharError) );
+                    throw new InvalidOperationException( SR.MaskedTextProviderPasswordAndPromptCharError );
                 }
 
                 if (!IsPrintableChar(value))
                 {
                     // Same message as in SR.MaskedTextBoxInvalidCharError.
-                    throw new ArgumentException( SR.GetString(SR.MaskedTextProviderInvalidCharError) );
+                    throw new ArgumentException( SR.MaskedTextProviderInvalidCharError );
                 }
                 
                 if (value != this.promptChar)

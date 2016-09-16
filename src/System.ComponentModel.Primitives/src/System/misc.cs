@@ -35,7 +35,7 @@ namespace System
 
 		protected override string GetLocalizedString(string value)
 		{
-			return SR.GetString(value);
+			return SR.GetResourceString(value,"");
 		}
 	}
 }
@@ -77,4 +77,9 @@ namespace System.Resources
         protected virtual void ReadResources() { }
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { throw null; }
     }
+}
+
+internal static class AssemblyRef
+{
+	internal const string SystemDrawing = "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a";
 }

@@ -48,7 +48,7 @@ namespace System.ComponentModel {
         ///    class.</para>
         /// </devdoc>
         public InvalidEnumArgumentException(string argumentName, int invalidValue, Type enumClass)
-            : base(SR.GetString(SR.InvalidEnumArgument,
+            : base(SR.Format(SR.InvalidEnumArgument,
                                 argumentName,
                                 invalidValue.ToString(CultureInfo.CurrentCulture),
                                 enumClass.Name), argumentName) {

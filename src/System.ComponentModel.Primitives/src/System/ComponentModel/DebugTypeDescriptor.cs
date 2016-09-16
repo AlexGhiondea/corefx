@@ -2161,7 +2161,7 @@ namespace System.ComponentModel {
 
                 Type providerType = ((object)provider).GetType();
                 if (!componentType.IsAssignableFrom(providerType)) {
-                    throw new ArgumentException(SR.GetString(SR.ErrorBadExtenderType, providerType.Name, componentType.Name), "provider");
+                    throw new ArgumentException(SR.Format(SR.ErrorBadExtenderType, providerType.Name, componentType.Name), "provider");
                 }
 
                 bool sitedProvider = false;

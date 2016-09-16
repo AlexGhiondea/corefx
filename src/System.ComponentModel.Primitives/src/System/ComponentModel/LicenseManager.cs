@@ -58,7 +58,7 @@ namespace System.ComponentModel {
             set {
                 lock(internalSyncObject) {
                     if (contextLockHolder != null) {
-                        throw new InvalidOperationException(SR.GetString(SR.LicMgrContextCannotBeChanged));
+                        throw new InvalidOperationException(SR.LicMgrContextCannotBeChanged);
                     }
                     context = value;
                 }
@@ -230,7 +230,7 @@ namespace System.ComponentModel {
         public static void LockContext(object contextUser) {
             lock(internalSyncObject) {
                 if (contextLockHolder != null) {
-                    throw new InvalidOperationException(SR.GetString(SR.LicMgrAlreadyLocked));
+                    throw new InvalidOperationException(SR.LicMgrAlreadyLocked);
                 }
                 contextLockHolder = contextUser;
             }
@@ -242,7 +242,7 @@ namespace System.ComponentModel {
         public static void UnlockContext(object contextUser) {
             lock(internalSyncObject) {
                 if (contextLockHolder != contextUser) {
-                    throw new ArgumentException(SR.GetString(SR.LicMgrDifferentUser));
+                    throw new ArgumentException(SR.LicMgrDifferentUser);
                 }
                 contextLockHolder = null;
             }

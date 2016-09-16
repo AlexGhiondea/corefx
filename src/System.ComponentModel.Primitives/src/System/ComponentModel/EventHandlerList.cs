@@ -13,6 +13,16 @@ namespace System.ComponentModel
     {
         private ListEntry _head;
 
+        /// <devdoc>
+        ///     Creates a new event handler list.  The parent component is used to check the component's
+        ///     CanRaiseEvents property.
+        /// </devdoc>
+        [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
+        internal EventHandlerList(Component parent)
+        {
+            this.parent = parent;
+        }
+
         /// <summary>
         ///    Creates a new event handler list.
         /// </summary>

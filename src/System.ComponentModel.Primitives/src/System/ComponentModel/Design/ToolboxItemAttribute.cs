@@ -98,7 +98,7 @@ namespace System.ComponentModel {
                             toolboxItemType = Type.GetType(toolboxItemTypeName, true);
                         }
                         catch (Exception ex) {
-                            throw new ArgumentException(SR.GetString(SR.ToolboxItemAttributeFailedGetType, toolboxItemTypeName), ex);
+                            throw new ArgumentException(SR.Format(SR.ToolboxItemAttributeFailedGetType, toolboxItemTypeName), ex);
                         }
                     }
                 }

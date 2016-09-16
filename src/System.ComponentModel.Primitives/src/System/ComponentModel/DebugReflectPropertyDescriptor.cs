@@ -116,11 +116,11 @@ namespace System.ComponentModel {
             try {
                 if (type == null) {
                     Debug.WriteLineIf(PropDescCreateSwitch.TraceVerbose, "type == null, name == " + name);
-                    throw new ArgumentException(SR.GetString(SR.ErrorInvalidPropertyType, name));
+                    throw new ArgumentException(SR.Format(SR.ErrorInvalidPropertyType, name));
                 }
                 if (componentClass == null) {
                     Debug.WriteLineIf(PropDescCreateSwitch.TraceVerbose, "componentClass == null, name == " + name);
-                    throw new ArgumentException(SR.GetString(SR.InvalidNullArgument, "componentClass"));
+                    throw new ArgumentException(SR.Format(SR.InvalidNullArgument, "componentClass"));
                 }
                 this.type = type;
                 this.componentClass = componentClass;
@@ -163,7 +163,7 @@ namespace System.ComponentModel {
             this.type = oldReflectPropertyDescriptor.PropertyType;
 
             if (componentClass == null) {
-                throw new ArgumentException(SR.GetString(SR.InvalidNullArgument, "componentClass"));
+                throw new ArgumentException(SR.Format(SR.InvalidNullArgument, "componentClass"));
             }
 
             // If the classes are the same, we can potentially optimize the method fetch because
@@ -313,13 +313,13 @@ namespace System.ComponentModel {
                             getMethod = propInfo.GetGetMethod(true);
                         }
                         if (getMethod == null) {
-                            throw new InvalidOperationException(SR.GetString(SR.ErrorMissingPropertyAccessors, componentClass.FullName + "." + Name));
+                            throw new InvalidOperationException(SR.Format(SR.ErrorMissingPropertyAccessors, componentClass.FullName + "." + Name));
                         }
                     }
                     else {
                         getMethod = FindMethod(componentClass, "Get" + Name, new Type[] {receiverType}, type);
                         if (getMethod == null) {
-                            throw new ArgumentException(SR.GetString(SR.ErrorMissingPropertyAccessors, Name));
+                            throw new ArgumentException(SR.Format(SR.ErrorMissingPropertyAccessors, Name));
                         }
                     }
                 }
@@ -962,7 +962,7 @@ namespace System.ComponentModel {
                         message = t.GetType().Name;
                     }
                     
-                    throw new TargetInvocationException(SR.GetString(SR.ErrorPropertyAccessorException, Name, name, message), t);
+                    throw new TargetInvocationException(SR.Format(SR.ErrorPropertyAccessorException, Name, name, message), t);
                 }
             }
             Debug.WriteLineIf(PropDescUsageSwitch.TraceVerbose, "[" + Name + "]:   ---> returning: null");

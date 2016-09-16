@@ -63,7 +63,7 @@ namespace System.ComponentModel {
         
             this.tabClasses = new Type[]{ tabClass};
             if (tabScope < PropertyTabScope.Document) {
-                throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeBadPropertyTabScope), "tabScope");
+                throw new ArgumentException(SR.Format(SR.PropertyTabAttributeBadPropertyTabScope), "tabScope");
             }
             this.tabScopes  = new PropertyTabScope[]{tabScope};
 
@@ -79,7 +79,7 @@ namespace System.ComponentModel {
         public PropertyTabAttribute(string tabClassName, PropertyTabScope tabScope) {
             this.tabClassNames = new string[]{ tabClassName};
             if (tabScope < PropertyTabScope.Document) {
-                throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeBadPropertyTabScope), "tabScope");
+                throw new ArgumentException(SR.Format(SR.PropertyTabAttributeBadPropertyTabScope), "tabScope");
             }
             this.tabScopes  = new PropertyTabScope[]{tabScope};
         }
@@ -115,7 +115,7 @@ namespace System.ComponentModel {
                                 }
                             }
                             else {
-                                throw new TypeLoadException(SR.GetString(SR.PropertyTabAttributeTypeLoadException, className));
+                                throw new TypeLoadException(SR.Format(SR.PropertyTabAttributeTypeLoadException, className));
                             }
                         }
                     }
@@ -206,25 +206,25 @@ namespace System.ComponentModel {
         
             if (tabClasses != null) {
                 if (tabScopes != null && tabClasses.Length != tabScopes.Length) {
-                    throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeArrayLengthMismatch));
+                    throw new ArgumentException(SR.PropertyTabAttributeArrayLengthMismatch);
                 }
                 this.tabClasses = (Type[])tabClasses.Clone();
             }
             else if (tabClassNames != null) {
                 if (tabScopes != null && tabClasses.Length != tabScopes.Length) {
-                    throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeArrayLengthMismatch));
+                    throw new ArgumentException(SR.PropertyTabAttributeArrayLengthMismatch);
                 }
                 this.tabClassNames = (string[])tabClassNames.Clone();
                 this.tabClasses = null;
             }
             else if (this.tabClasses == null && this.tabClassNames == null) {
-                throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeParamsBothNull));
+                throw new ArgumentException(SR.PropertyTabAttributeParamsBothNull);
             }
             
             if (tabScopes != null) {
                 for (int i = 0; i < tabScopes.Length; i++) {
                     if (tabScopes[i] < PropertyTabScope.Document) {
-                        throw new ArgumentException(SR.GetString(SR.PropertyTabAttributeBadPropertyTabScope));
+                        throw new ArgumentException(SR.PropertyTabAttributeBadPropertyTabScope);
                     }
                 }
                 this.tabScopes = (PropertyTabScope[])tabScopes.Clone();

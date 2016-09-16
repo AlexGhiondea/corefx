@@ -25,13 +25,13 @@ namespace System.ComponentModel {
         /// <para>Initializes a new instance of the <see cref='System.ComponentModel.LicenseException'/> class for the 
         ///    specified type.</para>
         /// </devdoc>
-        public LicenseException(Type type) : this(type, null, SR.GetString(SR.LicExceptionTypeOnly, type.FullName)) {
+        public LicenseException(Type type) : this(type, null, SR.Format(SR.LicExceptionTypeOnly, type.FullName)) {
         }
         /// <devdoc>
         /// <para>Initializes a new instance of the <see cref='System.ComponentModel.LicenseException'/> class for the 
         ///    specified type and instance.</para>
         /// </devdoc>
-        public LicenseException(Type type, object instance) : this(type, null, SR.GetString(SR.LicExceptionTypeAndInstance, type.FullName, instance.GetType().FullName))  {
+        public LicenseException(Type type, object instance) : this(type, null, SR.Format(SR.LicExceptionTypeAndInstance, type.FullName, instance.GetType().FullName))  {
         }
         /// <devdoc>
         /// <para>Initializes a new instance of the <see cref='System.ComponentModel.LicenseException'/> class for the 

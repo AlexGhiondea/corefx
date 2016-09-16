@@ -95,10 +95,10 @@ namespace System.ComponentModel {
                                       Attribute[] attributes)
         : base(name, attributes) {
             if (componentClass == null) {
-                throw new ArgumentException(SR.GetString(SR.InvalidNullArgument, "componentClass"));
+                throw new ArgumentException(SR.Format(SR.InvalidNullArgument, "componentClass"));
             }
             if (type == null || !(typeof(Delegate)).IsAssignableFrom(type)) {
-                throw new ArgumentException(SR.GetString(SR.ErrorInvalidEventType, name));
+                throw new ArgumentException(SR.Format(SR.ErrorInvalidEventType, name));
             }
             Debug.Assert(type.IsSubclassOf(typeof(Delegate)), "Not a valid ReflectEvent: " + componentClass.FullName + "." + name + " " + type.FullName);
             this.componentClass = componentClass;
@@ -109,7 +109,7 @@ namespace System.ComponentModel {
         : base(eventInfo.Name, new Attribute[0]) {
 
             if (componentClass == null) {
-                throw new ArgumentException(SR.GetString(SR.InvalidNullArgument, "componentClass"));
+                throw new ArgumentException(SR.Format(SR.InvalidNullArgument, "componentClass"));
             }
             this.componentClass = componentClass;
             this.realEvent = eventInfo;
@@ -195,7 +195,7 @@ namespace System.ComponentModel {
                 if (site != null && site.DesignMode) {
                     // Events are final, so just check the class
                     if (EventType != value.GetType()) {
-                        throw new ArgumentException(SR.GetString(SR.ErrorInvalidEventHandler, Name));
+                        throw new ArgumentException(SR.Format(SR.ErrorInvalidEventHandler, Name));
                     }
                     IDictionaryService dict = (IDictionaryService)site.GetService(typeof(IDictionaryService));
                     Debug.Assert(!CompModSwitches.CommonDesignerServices.Enabled || dict != null, "IDictionaryService not found");
@@ -365,7 +365,7 @@ namespace System.ComponentModel {
                 removeMethod = FindMethod(componentClass, "RemoveOn" + Name, argsType, typeof(void));
                 if (addMethod == null || removeMethod == null) {
                     Debug.Fail("Missing event accessors for " + componentClass.FullName + "." + Name);
-                    throw new ArgumentException(SR.GetString(SR.ErrorMissingEventAccessors, Name));
+                    throw new ArgumentException(SR.Format(SR.ErrorMissingEventAccessors, Name));
                 }
             }
 

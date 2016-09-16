@@ -34,7 +34,7 @@ namespace System.ComponentModel {
         /// </devdoc>
         private string DefaultCultureString {
             get {
-                return SR.GetString(SR.CultureInfoConverterDefaultCultureString);
+                return SR.CultureInfoConverterDefaultCultureString;
             }
         }
 
@@ -148,7 +148,7 @@ namespace System.ComponentModel {
                 // No good.  We can't support it.
                 //
                 if (retVal == null) {
-                    throw new ArgumentException(SR.GetString(SR.CultureInfoConverterInvalidCulture, (string)value));
+                    throw new ArgumentException(SR.Format(SR.CultureInfoConverterInvalidCulture, (string)value));
                 }
                 return retVal;
             }

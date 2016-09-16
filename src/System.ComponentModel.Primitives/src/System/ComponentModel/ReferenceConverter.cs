@@ -24,7 +24,7 @@ namespace System.ComponentModel {
     [HostProtection(SharedState = true)]
     public class ReferenceConverter : TypeConverter {
     
-        private static readonly string none = SR.GetString(SR.toStringNone);
+        private static readonly string none = SR.toStringNone;
         private Type type;
         
         /// <devdoc>

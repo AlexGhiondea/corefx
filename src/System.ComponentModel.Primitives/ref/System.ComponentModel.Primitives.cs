@@ -136,6 +136,7 @@ namespace System.ComponentModel
     public sealed partial class EventHandlerList : System.IDisposable
     {
         public EventHandlerList() { }
+        public EventHandlerList(Component parent) { }
         public System.Delegate this[object key] { get { return default(System.Delegate); } set { } }
         public void AddHandler(object key, System.Delegate value) { }
         public void AddHandlers(System.ComponentModel.EventHandlerList listToAddFrom) { }

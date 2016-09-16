@@ -17,7 +17,8 @@
         "System.Runtime.Serialization.Formatters":"4.3.0-beta-devapi-24514-05",
         "System.Runtime.InteropServices" :"4.3.0-beta-devapi-24514-05",
         "System.Text.RegularExpressions" : "4.3.0-beta-devapi-24514-05",
-        "System.Globalization": "4.3.0-beta-devapi-24514-05"
+        "System.Globalization": "4.3.0-beta-devapi-24514-05",
+        "System.Threading.Thread": "4.3.0-beta-devapi-24514-05"
       },
       "imports": [
         "dotnet5.1"

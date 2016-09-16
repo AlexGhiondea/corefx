@@ -49,38 +49,38 @@ namespace System.ComponentModel.Design.Serialization {
             if (member is FieldInfo) {
                 FieldInfo fi = (FieldInfo)member;
                 if (!fi.IsStatic) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorMustBeStatic));
+                    throw new ArgumentException(SR.InstanceDescriptorMustBeStatic);
                 }
                 if (this.arguments.Count != 0) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorLengthMismatch));
+                    throw new ArgumentException(SR.InstanceDescriptorLengthMismatch);
                 }
             }
             else if (member is ConstructorInfo) {
                 ConstructorInfo ci = (ConstructorInfo)member;
                 if (ci.IsStatic) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorCannotBeStatic));
+                    throw new ArgumentException(SR.InstanceDescriptorCannotBeStatic);
                 }
                 if (this.arguments.Count != ci.GetParameters().Length) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorLengthMismatch));
+                    throw new ArgumentException(SR.InstanceDescriptorLengthMismatch);
                 }
             }
             else if (member is MethodInfo) {
                 MethodInfo mi = (MethodInfo)member;
                 if (!mi.IsStatic) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorMustBeStatic));
+                    throw new ArgumentException(SR.InstanceDescriptorMustBeStatic);
                 }
                 if (this.arguments.Count != mi.GetParameters().Length) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorLengthMismatch));
+                    throw new ArgumentException(SR.InstanceDescriptorLengthMismatch);
                 }
             }
             else if (member is PropertyInfo) {
                 PropertyInfo pi = (PropertyInfo)member;
                 if (!pi.CanRead) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorMustBeReadable));
+                    throw new ArgumentException(SR.InstanceDescriptorMustBeReadable);
                 }
                 MethodInfo mi = pi.GetGetMethod();
                 if (mi != null && !mi.IsStatic) {
-                    throw new ArgumentException(SR.GetString(SR.InstanceDescriptorMustBeStatic));
+                    throw new ArgumentException(SR.InstanceDescriptorMustBeStatic);
                 }
             }
         }

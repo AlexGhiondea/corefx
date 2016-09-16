@@ -250,7 +250,7 @@ namespace System.ComponentModel {
                             && s.Component != component) {
                         InheritanceAttribute inheritanceAttribute = (InheritanceAttribute)TypeDescriptor.GetAttributes(s.Component)[typeof(InheritanceAttribute)];
                         if(inheritanceAttribute.InheritanceLevel != InheritanceLevel.InheritedReadOnly) {
-                            throw new ArgumentException(SR.GetString(SR.DuplicateComponentName, name));
+                            throw new ArgumentException(SR.Format(SR.DuplicateComponentName, name));
                         }
                     }
                 }

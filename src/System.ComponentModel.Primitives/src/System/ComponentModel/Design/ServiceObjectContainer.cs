@@ -106,11 +106,11 @@ namespace System.ComponentModel.Design {
             if (serviceType == null) throw new ArgumentNullException("serviceType");
             if (serviceInstance == null) throw new ArgumentNullException("serviceInstance");
             if (!(serviceInstance is ServiceCreatorCallback) && !serviceInstance.GetType().IsCOMObject && !serviceType.IsAssignableFrom(serviceInstance.GetType())) {
-                throw new ArgumentException(SR.GetString(SR.ErrorInvalidServiceInstance, serviceType.FullName));
+                throw new ArgumentException(SR.Format(SR.ErrorInvalidServiceInstance, serviceType.FullName));
             }
             
             if (Services.ContainsKey(serviceType)) {
-                throw new ArgumentException(SR.GetString(SR.ErrorServiceExists, serviceType.FullName), "serviceType");
+                throw new ArgumentException(SR.Format(SR.ErrorServiceExists, serviceType.FullName), "serviceType");
             }
             
             Services[serviceType] = serviceInstance;
@@ -146,7 +146,7 @@ namespace System.ComponentModel.Design {
             if (callback == null) throw new ArgumentNullException("callback");
             
             if (Services.ContainsKey(serviceType)) {
-                throw new ArgumentException(SR.GetString(SR.ErrorServiceExists, serviceType.FullName), "serviceType");
+                throw new ArgumentException(SR.Format(SR.ErrorServiceExists, serviceType.FullName), "serviceType");
             }
             
             Services[serviceType] = callback;
