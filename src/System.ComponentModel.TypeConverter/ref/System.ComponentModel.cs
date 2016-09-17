@@ -1,14 +1,3 @@
-namespace System{
-    public partial class UriTypeConverter : System.ComponentModel.TypeConverter
-    {
-        public UriTypeConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override bool IsValid(System.ComponentModel.ITypeDescriptorContext context, object value) { throw null; }
-    }
-}
 namespace System.ComponentModel
 {
     public partial class PropertyChangingEventArgs : System.EventArgs
@@ -80,13 +69,13 @@ namespace System.ComponentModel
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
-    public partial class ArrayConverter : System.ComponentModel.CollectionConverter
-    {
-        public ArrayConverter() { }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
-        public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-    }
+    // public partial class ArrayConverter : System.ComponentModel.CollectionConverter
+    // {
+    //     public ArrayConverter() { }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    //     public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
+    //     public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    // }
     // public sealed partial class AsyncOperation
     // {
     //     internal AsyncOperation() { }
@@ -125,15 +114,15 @@ namespace System.ComponentModel
     //     public bool Matches(System.Attribute[] attributes) { throw null; }
     //     System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { throw null; }
     // }
-    [System.AttributeUsageAttribute((System.AttributeTargets)(128))]
-    public partial class AttributeProviderAttribute : System.Attribute
-    {
-        public AttributeProviderAttribute(string typeName) { }
-        public AttributeProviderAttribute(string typeName, string propertyName) { }
-        public AttributeProviderAttribute(System.Type type) { }
-        public string PropertyName { get { throw null; } }
-        public string TypeName { get { throw null; } }
-    }
+    // [System.AttributeUsageAttribute((System.AttributeTargets)(128))]
+    // public partial class AttributeProviderAttribute : System.Attribute
+    // {
+    //     public AttributeProviderAttribute(string typeName) { }
+    //     public AttributeProviderAttribute(string typeName, string propertyName) { }
+    //     public AttributeProviderAttribute(System.Type type) { }
+    //     public string PropertyName { get { throw null; } }
+    //     public string TypeName { get { throw null; } }
+    // }
     [System.ComponentModel.DefaultEventAttribute("DoWork")]
     public partial class BackgroundWorker : System.ComponentModel.Component
     {
@@ -241,27 +230,27 @@ namespace System.ComponentModel
         void System.ComponentModel.IBindingList.RemoveIndex(System.ComponentModel.PropertyDescriptor prop) { }
         void System.ComponentModel.IBindingList.RemoveSort() { }
     }
-    public partial class BooleanConverter : System.ComponentModel.TypeConverter
-    {
-        public BooleanConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-    }
-    public partial class ByteConverter : System.ComponentModel.BaseNumberConverter
-    {
-        public ByteConverter() { }
-    }
-    public delegate void CancelEventHandler(object sender, System.ComponentModel.CancelEventArgs e);
-    public partial class CharConverter : System.ComponentModel.TypeConverter
-    {
-        public CharConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
+    // public partial class BooleanConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public BooleanConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    // }
+    // public partial class ByteConverter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public ByteConverter() { }
+    // }
+    //public delegate void CancelEventHandler(object sender, System.ComponentModel.CancelEventArgs e);
+    // public partial class CharConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public CharConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
     // public enum CollectionChangeAction
     // {
     //     Add = 1,
@@ -274,7 +263,7 @@ namespace System.ComponentModel
     //     public virtual System.ComponentModel.CollectionChangeAction Action { get { throw null; } }
     //     public virtual object Element { get { throw null; } }
     // }
-    public delegate void CollectionChangeEventHandler(object sender, System.ComponentModel.CollectionChangeEventArgs e);
+    //public delegate void CollectionChangeEventHandler(object sender, System.ComponentModel.CollectionChangeEventArgs e);
     // public partial class CollectionConverter : System.ComponentModel.TypeConverter
     // {
     //     public CollectionConverter() { }
@@ -346,23 +335,23 @@ namespace System.ComponentModel
         public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
         public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
     }
-    public abstract partial class CustomTypeDescriptor : System.ComponentModel.ICustomTypeDescriptor
-    {
-        protected CustomTypeDescriptor() { }
-        protected CustomTypeDescriptor(System.ComponentModel.ICustomTypeDescriptor parent) { }
-        public virtual System.ComponentModel.AttributeCollection GetAttributes() { throw null; }
-        public virtual string GetClassName() { throw null; }
-        public virtual string GetComponentName() { throw null; }
-        public virtual System.ComponentModel.TypeConverter GetConverter() { throw null; }
-        public virtual System.ComponentModel.EventDescriptor GetDefaultEvent() { throw null; }
-        public virtual System.ComponentModel.PropertyDescriptor GetDefaultProperty() { throw null; }
-        public virtual object GetEditor(System.Type editorBaseType) { throw null; }
-        public virtual System.ComponentModel.EventDescriptorCollection GetEvents() { throw null; }
-        public virtual System.ComponentModel.EventDescriptorCollection GetEvents(System.Attribute[] attributes) { throw null; }
-        public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties() { throw null; }
-        public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Attribute[] attributes) { throw null; }
-        public virtual object GetPropertyOwner(System.ComponentModel.PropertyDescriptor pd) { throw null; }
-    }
+    // public abstract partial class CustomTypeDescriptor : System.ComponentModel.ICustomTypeDescriptor
+    // {
+    //     protected CustomTypeDescriptor() { }
+    //     protected CustomTypeDescriptor(System.ComponentModel.ICustomTypeDescriptor parent) { }
+    //     public virtual System.ComponentModel.AttributeCollection GetAttributes() { throw null; }
+    //     public virtual string GetClassName() { throw null; }
+    //     public virtual string GetComponentName() { throw null; }
+    //     public virtual System.ComponentModel.TypeConverter GetConverter() { throw null; }
+    //     public virtual System.ComponentModel.EventDescriptor GetDefaultEvent() { throw null; }
+    //     public virtual System.ComponentModel.PropertyDescriptor GetDefaultProperty() { throw null; }
+    //     public virtual object GetEditor(System.Type editorBaseType) { throw null; }
+    //     public virtual System.ComponentModel.EventDescriptorCollection GetEvents() { throw null; }
+    //     public virtual System.ComponentModel.EventDescriptorCollection GetEvents(System.Attribute[] attributes) { throw null; }
+    //     public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties() { throw null; }
+    //     public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Attribute[] attributes) { throw null; }
+    //     public virtual object GetPropertyOwner(System.ComponentModel.PropertyDescriptor pd) { throw null; }
+    // }
     public partial class DataErrorsChangedEventArgs : System.EventArgs
     {
         public DataErrorsChangedEventArgs(string propertyName) { }
@@ -414,28 +403,28 @@ namespace System.ComponentModel
         Select = 1,
         Update = 2,
     }
-    public partial class DateTimeConverter : System.ComponentModel.TypeConverter
-    {
-        public DateTimeConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
-    public partial class DateTimeOffsetConverter : System.ComponentModel.TypeConverter
-    {
-        public DateTimeOffsetConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
-    public partial class DecimalConverter : System.ComponentModel.BaseNumberConverter
-    {
-        public DecimalConverter() { }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
+    // public partial class DateTimeConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public DateTimeConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
+    // public partial class DateTimeOffsetConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public DateTimeOffsetConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
+    // public partial class DecimalConverter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public DecimalConverter() { }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
     [System.AttributeUsageAttribute((System.AttributeTargets)(4))]
     public sealed partial class DefaultBindingPropertyAttribute : System.Attribute
     {
@@ -491,10 +480,10 @@ namespace System.ComponentModel
         public override int GetHashCode() { throw null; }
         //TODO - expose IsDefaultAttribute on Attribute public override bool IsDefaultAttribute() { throw null; }
     }
-    public partial class DoubleConverter : System.ComponentModel.BaseNumberConverter
-    {
-        public DoubleConverter() { }
-    }
+    // public partial class DoubleConverter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public DoubleConverter() { }
+    // }
     // public partial class DoWorkEventArgs : System.ComponentModel.CancelEventArgs
     // {
     //     public DoWorkEventArgs(object argument) { }
@@ -515,21 +504,21 @@ namespace System.ComponentModel
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
-    public partial class EnumConverter : System.ComponentModel.TypeConverter
-    {
-        public EnumConverter(System.Type type) { }
-        protected virtual System.Collections.IComparer Comparer { get { throw null; } }
-        protected System.Type EnumType { get { throw null; } }
-        protected System.ComponentModel.TypeConverter.StandardValuesCollection Values { get { throw null; } set { } }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool IsValid(System.ComponentModel.ITypeDescriptorContext context, object value) { throw null; }
-    }
+    // public partial class EnumConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public EnumConverter(System.Type type) { }
+    //     protected virtual System.Collections.IComparer Comparer { get { throw null; } }
+    //     protected System.Type EnumType { get { throw null; } }
+    //     protected System.ComponentModel.TypeConverter.StandardValuesCollection Values { get { throw null; } set { } }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    //     public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool IsValid(System.ComponentModel.ITypeDescriptorContext context, object value) { throw null; }
+    // }
     // public abstract partial class EventDescriptor : System.ComponentModel.MemberDescriptor
     // {
     //     protected EventDescriptor(System.ComponentModel.MemberDescriptor descr) : base (default(string)) { }
@@ -586,32 +575,32 @@ namespace System.ComponentModel
         public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
         public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
     }
-    [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
-    public sealed partial class ExtenderProvidedPropertyAttribute : System.Attribute
-    {
-        public ExtenderProvidedPropertyAttribute() { }
-        public System.ComponentModel.PropertyDescriptor ExtenderProperty { get { throw null; } }
-        public System.ComponentModel.IExtenderProvider Provider { get { throw null; } }
-        public System.Type ReceiverType { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-        //TODO - expose IsDefaultAttribute on Attribute public override bool IsDefaultAttribute() { throw null; }
-    }
-    public partial class GuidConverter : System.ComponentModel.TypeConverter
-    {
-        public GuidConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
+    // [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
+    // public sealed partial class ExtenderProvidedPropertyAttribute : System.Attribute
+    // {
+    //     public ExtenderProvidedPropertyAttribute() { }
+    //     public System.ComponentModel.PropertyDescriptor ExtenderProperty { get { throw null; } }
+    //     public System.ComponentModel.IExtenderProvider Provider { get { throw null; } }
+    //     public System.Type ReceiverType { get { throw null; } }
+    //     public override bool Equals(object obj) { throw null; }
+    //     public override int GetHashCode() { throw null; }
+    //     //TODO - expose IsDefaultAttribute on Attribute public override bool IsDefaultAttribute() { throw null; }
+    // }
+    // public partial class GuidConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public GuidConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
     // public partial class HandledEventArgs : System.EventArgs
     // {
     //     public HandledEventArgs() { }
     //     public HandledEventArgs(bool defaultHandledValue) { }
     //     public bool Handled { get { throw null; } set { } }
     // }
-    public delegate void HandledEventHandler(object sender, System.ComponentModel.HandledEventArgs e);
+    //public delegate void HandledEventHandler(object sender, System.ComponentModel.HandledEventArgs e);
     public partial interface IBindingList : System.Collections.ICollection, System.Collections.IEnumerable, System.Collections.IList
     {
         bool AllowEdit { get; }
@@ -750,25 +739,25 @@ namespace System.ComponentModel
         public virtual string Text { get { throw null; } }
         public abstract object CreateInstance(System.ComponentModel.ITypeDescriptorContext context, System.Type instanceType);
     }
-    public partial class Int16Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public Int16Converter() { }
-    }
-    public partial class Int32Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public Int32Converter() { }
-    }
-    public partial class Int64Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public Int64Converter() { }
-    }
-    public partial class InvalidAsynchronousStateException : System.ArgumentException
-    {
-        public InvalidAsynchronousStateException() { }
-        protected InvalidAsynchronousStateException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
-        public InvalidAsynchronousStateException(string message) { }
-        public InvalidAsynchronousStateException(string message, System.Exception innerException) { }
-    }
+    // public partial class Int16Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public Int16Converter() { }
+    // }
+    // public partial class Int32Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public Int32Converter() { }
+    // }
+    // public partial class Int64Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public Int64Converter() { }
+    // }
+    // public partial class InvalidAsynchronousStateException : System.ArgumentException
+    // {
+    //     public InvalidAsynchronousStateException() { }
+    //     protected InvalidAsynchronousStateException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
+    //     public InvalidAsynchronousStateException(string message) { }
+    //     public InvalidAsynchronousStateException(string message, System.Exception innerException) { }
+    // }
     public partial class InvalidEnumArgumentException : System.ArgumentException
     {
         public InvalidEnumArgumentException() { }
@@ -810,11 +799,11 @@ namespace System.ComponentModel
     //     void OnComponentChanged();
     //     bool OnComponentChanging();
     // }
-    public partial interface ITypedList
-    {
-        System.ComponentModel.PropertyDescriptorCollection GetItemProperties(System.ComponentModel.PropertyDescriptor[] listAccessors);
-        string GetListName(System.ComponentModel.PropertyDescriptor[] listAccessors);
-    }
+    // public partial interface ITypedList
+    // {
+    //     System.ComponentModel.PropertyDescriptorCollection GetItemProperties(System.ComponentModel.PropertyDescriptor[] listAccessors);
+    //     string GetListName(System.ComponentModel.PropertyDescriptor[] listAccessors);
+    // }
     public abstract partial class License : System.IDisposable
     {
         protected License() { }
@@ -1091,13 +1080,13 @@ namespace System.ComponentModel
     //     protected static object GetInvokee(System.Type componentClass, object component) { throw null; }
     //     protected static System.ComponentModel.ISite GetSite(object component) { throw null; }
     // }
-    public partial class MultilineStringConverter : System.ComponentModel.TypeConverter
-    {
-        public MultilineStringConverter() { }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
-        public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-    }
+    // public partial class MultilineStringConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public MultilineStringConverter() { }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    //     public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
+    //     public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    // }
     public partial class NestedContainer : System.ComponentModel.Container, System.ComponentModel.IContainer, System.ComponentModel.INestedContainer, System.IDisposable
     {
         public NestedContainer(System.ComponentModel.IComponent owner) { }
@@ -1107,25 +1096,25 @@ namespace System.ComponentModel
         protected override void Dispose(bool disposing) { }
         protected override object GetService(System.Type service) { throw null; }
     }
-    public partial class NullableConverter : System.ComponentModel.TypeConverter
-    {
-        public NullableConverter(System.Type type) { }
-        public System.Type NullableType { get { throw null; } }
-        public System.Type UnderlyingType { get { throw null; } }
-        public System.ComponentModel.TypeConverter UnderlyingTypeConverter { get { throw null; } }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override object CreateInstance(System.ComponentModel.ITypeDescriptorContext context, System.Collections.IDictionary propertyValues) { throw null; }
-        public override bool GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
-        public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool IsValid(System.ComponentModel.ITypeDescriptorContext context, object value) { throw null; }
-    }
+    // public partial class NullableConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public NullableConverter(System.Type type) { }
+    //     public System.Type NullableType { get { throw null; } }
+    //     public System.Type UnderlyingType { get { throw null; } }
+    //     public System.ComponentModel.TypeConverter UnderlyingTypeConverter { get { throw null; } }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    //     public override object CreateInstance(System.ComponentModel.ITypeDescriptorContext context, System.Collections.IDictionary propertyValues) { throw null; }
+    //     public override bool GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
+    //     public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool IsValid(System.ComponentModel.ITypeDescriptorContext context, object value) { throw null; }
+    // }
     [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
     public sealed partial class PasswordPropertyTextAttribute : System.Attribute
     {
@@ -1247,17 +1236,17 @@ namespace System.ComponentModel
         Global = 1,
         Static = 0,
     }
-    [System.AttributeUsageAttribute((System.AttributeTargets)(4), AllowMultiple=true)]
-    public sealed partial class ProvidePropertyAttribute : System.Attribute
-    {
-        public ProvidePropertyAttribute(string propertyName, string receiverTypeName) { }
-        public ProvidePropertyAttribute(string propertyName, System.Type receiverType) { }
-        public string PropertyName { get { throw null; } }
-        public string ReceiverTypeName { get { throw null; } }
-        //TODO - expose TypeID on Attribute public override object TypeId { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-    }
+    // [System.AttributeUsageAttribute((System.AttributeTargets)(4), AllowMultiple=true)]
+    // public sealed partial class ProvidePropertyAttribute : System.Attribute
+    // {
+    //     public ProvidePropertyAttribute(string propertyName, string receiverTypeName) { }
+    //     public ProvidePropertyAttribute(string propertyName, System.Type receiverType) { }
+    //     public string PropertyName { get { throw null; } }
+    //     public string ReceiverTypeName { get { throw null; } }
+    //     //TODO - expose TypeID on Attribute public override object TypeId { get { throw null; } }
+    //     public override bool Equals(object obj) { throw null; }
+    //     public override int GetHashCode() { throw null; }
+    // }
     [System.AttributeUsageAttribute((System.AttributeTargets)(128))]
     [System.ObsoleteAttribute("Use System.ComponentModel.SettingsBindableAttribute instead to work with the new settings model.")]
     public partial class RecommendedAsConfigurableAttribute : System.Attribute
@@ -1311,34 +1300,34 @@ namespace System.ComponentModel
     //     public new object UserState { get { throw null; } }
     // }
     // public delegate void RunWorkerCompletedEventHandler(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e);
-    public partial class SByteConverter : System.ComponentModel.BaseNumberConverter
-    {
-        public SByteConverter() { }
-    }
-    public partial class SingleConverter : System.ComponentModel.BaseNumberConverter
-    {
-        public SingleConverter() { }
-    }
-    public partial class StringConverter : System.ComponentModel.TypeConverter
-    {
-        public StringConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-    }
+    // public partial class SByteConverter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public SByteConverter() { }
+    // }
+    // public partial class SingleConverter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public SingleConverter() { }
+    // }
+    // public partial class StringConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public StringConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    // }
     public static partial class SyntaxCheck
     {
         public static bool CheckMachineName(string value) { throw null; }
         public static bool CheckPath(string value) { throw null; }
         public static bool CheckRootedPath(string value) { throw null; }
     }
-    public partial class TimeSpanConverter : System.ComponentModel.TypeConverter
-    {
-        public TimeSpanConverter() { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-    }
+    // public partial class TimeSpanConverter : System.ComponentModel.TypeConverter
+    // {
+    //     public TimeSpanConverter() { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    // }
     [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
     public partial class ToolboxItemAttribute : System.Attribute
     {
@@ -1468,139 +1457,139 @@ namespace System.ComponentModel
     //     public virtual System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(System.Type objectType, object instance) { throw null; }
     //     public virtual bool IsSupportedType(System.Type type) { throw null; }
     // }
-    [System.AttributeUsageAttribute((System.AttributeTargets)(4), Inherited=true)]
-    public sealed partial class TypeDescriptionProviderAttribute : System.Attribute
-    {
-        public TypeDescriptionProviderAttribute(string typeName) { }
-        public TypeDescriptionProviderAttribute(System.Type type) { }
-        public string TypeName { get { throw null; } }
-    }
-    public sealed partial class TypeDescriptor
-    {
-        internal TypeDescriptor() { }
-        [System.ObsoleteAttribute("This property has been deprecated.  Use a type description provider to supply type information for COM types instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-        public static System.ComponentModel.IComNativeDescriptorHandler ComNativeDescriptorHandler { get { throw null; } set { } }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.Type ComObjectType { get { throw null; } }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.Type InterfaceType { get { throw null; } }
-        public static event System.ComponentModel.RefreshEventHandler Refreshed { add { } remove { } }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.TypeDescriptionProvider AddAttributes(object instance, params System.Attribute[] attributes) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.TypeDescriptionProvider AddAttributes(System.Type type, params System.Attribute[] attributes) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void AddEditorTable(System.Type editorBaseType, System.Collections.Hashtable table) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void AddProvider(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void AddProvider(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void CreateAssociation(object primary, object secondary) { }
-        public static System.ComponentModel.Design.IDesigner CreateDesigner(System.ComponentModel.IComponent component, System.Type designerBaseType) { throw null; }
-        public static System.ComponentModel.EventDescriptor CreateEvent(System.Type componentType, System.ComponentModel.EventDescriptor oldEventDescriptor, params System.Attribute[] attributes) { throw null; }
-        public static System.ComponentModel.EventDescriptor CreateEvent(System.Type componentType, string name, System.Type type, params System.Attribute[] attributes) { throw null; }
-        public static object CreateInstance(System.IServiceProvider provider, System.Type objectType, System.Type[] argTypes, object[] args) { throw null; }
-        public static System.ComponentModel.PropertyDescriptor CreateProperty(System.Type componentType, System.ComponentModel.PropertyDescriptor oldPropertyDescriptor, params System.Attribute[] attributes) { throw null; }
-        public static System.ComponentModel.PropertyDescriptor CreateProperty(System.Type componentType, string name, System.Type type, params System.Attribute[] attributes) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static object GetAssociation(System.Type type, object primary) { throw null; }
-        public static System.ComponentModel.AttributeCollection GetAttributes(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.AttributeCollection GetAttributes(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.AttributeCollection GetAttributes(System.Type componentType) { throw null; }
-        public static string GetClassName(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static string GetClassName(object component, bool noCustomTypeDesc) { throw null; }
-        public static string GetClassName(System.Type componentType) { throw null; }
-        public static string GetComponentName(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static string GetComponentName(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.TypeConverter GetConverter(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.TypeConverter GetConverter(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.TypeConverter GetConverter(System.Type type) { throw null; }
-        public static System.ComponentModel.EventDescriptor GetDefaultEvent(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.EventDescriptor GetDefaultEvent(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.EventDescriptor GetDefaultEvent(System.Type componentType) { throw null; }
-        public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(System.Type componentType) { throw null; }
-        public static object GetEditor(object component, System.Type editorBaseType) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static object GetEditor(object component, System.Type editorBaseType, bool noCustomTypeDesc) { throw null; }
-        public static object GetEditor(System.Type type, System.Type editorBaseType) { throw null; }
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(object component) { throw null; }
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, System.Attribute[] attributes) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, System.Attribute[] attributes, bool noCustomTypeDesc) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(System.Type componentType) { throw null; }
-        public static System.ComponentModel.EventDescriptorCollection GetEvents(System.Type componentType, System.Attribute[] attributes) { throw null; }
-        public static string GetFullComponentName(object component) { throw null; }
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component) { throw null; }
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, System.Attribute[] attributes) { throw null; }
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, System.Attribute[] attributes, bool noCustomTypeDesc) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, bool noCustomTypeDesc) { throw null; }
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Type componentType) { throw null; }
-        public static System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Type componentType, System.Attribute[] attributes) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.TypeDescriptionProvider GetProvider(object instance) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.ComponentModel.TypeDescriptionProvider GetProvider(System.Type type) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.Type GetReflectionType(object instance) { throw null; }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.Type GetReflectionType(System.Type type) { throw null; }
-        public static void Refresh(object component) { }
-        public static void Refresh(System.Reflection.Assembly assembly) { }
-        public static void Refresh(System.Reflection.Module module) { }
-        public static void Refresh(System.Type type) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveAssociation(object primary, object secondary) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveAssociations(object primary) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveProvider(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveProvider(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static void RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
-        public static void SortDescriptorArray(System.Collections.IList infos) { }
-    }
-    public abstract partial class TypeListConverter : System.ComponentModel.TypeConverter
-    {
-        protected TypeListConverter(System.Type[] types) { }
-        public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
-        public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
-        public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
-        public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
-        public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-        public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
-    }
-    public partial class UInt16Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public UInt16Converter() { }
-    }
-    public partial class UInt32Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public UInt32Converter() { }
-    }
-    public partial class UInt64Converter : System.ComponentModel.BaseNumberConverter
-    {
-        public UInt64Converter() { }
-    }
+    // [System.AttributeUsageAttribute((System.AttributeTargets)(4), Inherited=true)]
+    // public sealed partial class TypeDescriptionProviderAttribute : System.Attribute
+    // {
+    //     public TypeDescriptionProviderAttribute(string typeName) { }
+    //     public TypeDescriptionProviderAttribute(System.Type type) { }
+    //     public string TypeName { get { throw null; } }
+    // }
+    // public sealed partial class TypeDescriptor
+    // {
+    //     internal TypeDescriptor() { }
+    //     [System.ObsoleteAttribute("This property has been deprecated.  Use a type description provider to supply type information for COM types instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+    //     public static System.ComponentModel.IComNativeDescriptorHandler ComNativeDescriptorHandler { get { throw null; } set { } }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.Type ComObjectType { get { throw null; } }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.Type InterfaceType { get { throw null; } }
+    //     public static event System.ComponentModel.RefreshEventHandler Refreshed { add { } remove { } }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.TypeDescriptionProvider AddAttributes(object instance, params System.Attribute[] attributes) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.TypeDescriptionProvider AddAttributes(System.Type type, params System.Attribute[] attributes) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void AddEditorTable(System.Type editorBaseType, System.Collections.Hashtable table) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void AddProvider(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void AddProvider(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void CreateAssociation(object primary, object secondary) { }
+    //     public static System.ComponentModel.Design.IDesigner CreateDesigner(System.ComponentModel.IComponent component, System.Type designerBaseType) { throw null; }
+    //     public static System.ComponentModel.EventDescriptor CreateEvent(System.Type componentType, System.ComponentModel.EventDescriptor oldEventDescriptor, params System.Attribute[] attributes) { throw null; }
+    //     public static System.ComponentModel.EventDescriptor CreateEvent(System.Type componentType, string name, System.Type type, params System.Attribute[] attributes) { throw null; }
+    //     public static object CreateInstance(System.IServiceProvider provider, System.Type objectType, System.Type[] argTypes, object[] args) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptor CreateProperty(System.Type componentType, System.ComponentModel.PropertyDescriptor oldPropertyDescriptor, params System.Attribute[] attributes) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptor CreateProperty(System.Type componentType, string name, System.Type type, params System.Attribute[] attributes) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static object GetAssociation(System.Type type, object primary) { throw null; }
+    //     public static System.ComponentModel.AttributeCollection GetAttributes(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.AttributeCollection GetAttributes(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.AttributeCollection GetAttributes(System.Type componentType) { throw null; }
+    //     public static string GetClassName(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static string GetClassName(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static string GetClassName(System.Type componentType) { throw null; }
+    //     public static string GetComponentName(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static string GetComponentName(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.TypeConverter GetConverter(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.TypeConverter GetConverter(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.TypeConverter GetConverter(System.Type type) { throw null; }
+    //     public static System.ComponentModel.EventDescriptor GetDefaultEvent(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.EventDescriptor GetDefaultEvent(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.EventDescriptor GetDefaultEvent(System.Type componentType) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptor GetDefaultProperty(System.Type componentType) { throw null; }
+    //     public static object GetEditor(object component, System.Type editorBaseType) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static object GetEditor(object component, System.Type editorBaseType, bool noCustomTypeDesc) { throw null; }
+    //     public static object GetEditor(System.Type type, System.Type editorBaseType) { throw null; }
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(object component) { throw null; }
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, System.Attribute[] attributes) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, System.Attribute[] attributes, bool noCustomTypeDesc) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(System.Type componentType) { throw null; }
+    //     public static System.ComponentModel.EventDescriptorCollection GetEvents(System.Type componentType, System.Attribute[] attributes) { throw null; }
+    //     public static string GetFullComponentName(object component) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, System.Attribute[] attributes) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, System.Attribute[] attributes, bool noCustomTypeDesc) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, bool noCustomTypeDesc) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Type componentType) { throw null; }
+    //     public static System.ComponentModel.PropertyDescriptorCollection GetProperties(System.Type componentType, System.Attribute[] attributes) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.TypeDescriptionProvider GetProvider(object instance) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.ComponentModel.TypeDescriptionProvider GetProvider(System.Type type) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.Type GetReflectionType(object instance) { throw null; }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.Type GetReflectionType(System.Type type) { throw null; }
+    //     public static void Refresh(object component) { }
+    //     public static void Refresh(System.Reflection.Assembly assembly) { }
+    //     public static void Refresh(System.Reflection.Module module) { }
+    //     public static void Refresh(System.Type type) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveAssociation(object primary, object secondary) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveAssociations(object primary) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveProvider(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveProvider(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, object instance) { }
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static void RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider provider, System.Type type) { }
+    //     public static void SortDescriptorArray(System.Collections.IList infos) { }
+    // }
+    // public abstract partial class TypeListConverter : System.ComponentModel.TypeConverter
+    // {
+    //     protected TypeListConverter(System.Type[] types) { }
+    //     public override bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) { throw null; }
+    //     public override bool CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) { throw null; }
+    //     public override object ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) { throw null; }
+    //     public override object ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) { throw null; }
+    //     public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    //     public override bool GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
+    // }
+    // public partial class UInt16Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public UInt16Converter() { }
+    // }
+    // public partial class UInt32Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public UInt32Converter() { }
+    // }
+    // public partial class UInt64Converter : System.ComponentModel.BaseNumberConverter
+    // {
+    //     public UInt64Converter() { }
+    // }
     public partial class WarningException : System.SystemException
     {
         public WarningException() { }

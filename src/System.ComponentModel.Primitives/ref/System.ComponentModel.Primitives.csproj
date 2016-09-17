@@ -7,7 +7,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="System.ComponentModel.Primitives.cs" />
-    <Compile Include="System.ComponentModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
