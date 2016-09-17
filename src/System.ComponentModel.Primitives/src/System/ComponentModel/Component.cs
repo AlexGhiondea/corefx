@@ -6,10 +6,7 @@
 
 namespace System.ComponentModel {
     using System;
-    using System.ComponentModel.Design;
-    using System.ComponentModel.Design.Serialization;
     using System.Runtime.InteropServices;
-    using System.Security.Permissions;
 
     /// <devdoc>
     ///    <para>Provides the default implementation for the 

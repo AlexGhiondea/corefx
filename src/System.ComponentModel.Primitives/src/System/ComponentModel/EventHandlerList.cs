@@ -12,15 +12,16 @@ namespace System.ComponentModel
     public sealed class EventHandlerList : IDisposable
     {
         private ListEntry _head;
+        private Component _parent;
 
         /// <devdoc>
         ///     Creates a new event handler list.  The parent component is used to check the component's
         ///     CanRaiseEvents property.
         /// </devdoc>
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
-        internal EventHandlerList(Component parent)
+        public EventHandlerList(Component parent)
         {
-            this.parent = parent;
+            this._parent = parent;
         }
 
         /// <summary>
@@ -39,7 +40,12 @@ namespace System.ComponentModel
             [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
             get
             {
-                ListEntry e = Find(key);
+                ListEntry e = null;
+                if (_parent == null || _parent.CanRaiseEventsInternal)
+                {
+                    e = Find(key);
+                }
+
                 if (e != null)
                 {
                     return e.handler;

@@ -2,26 +2,16 @@
   "frameworks": {
     "netstandard1.7": {
       "dependencies": {
-        "System.Collections": "4.3.0-beta-devapi-24514-05",
-        "System.Collections.Specialized": "4.3.0-beta-devapi-24514-05",
+        "System.Collections.NonGeneric": "4.3.0-beta-devapi-24515-05",
         "System.ComponentModel": "4.3.0-preview1-24515-01",
-        "System.ComponentModel.TypeConverter": "4.3.0-preview1-24515-01",
-        "System.Diagnostics.Debug": "4.3.0-beta-devapi-24514-05",
         "System.Diagnostics.Tools": "4.3.0-preview1-24515-01",
-        "System.Diagnostics.TraceSource": "4.3.0-beta-devapi-24514-05",
-        "System.Resources.ResourceManager": "4.3.0-beta-devapi-24514-05",
-        "System.Runtime": "4.3.0-beta-devapi-24514-05",
-        "System.Reflection": "4.3.0-beta-devapi-24514-05",
-        "System.Security.Permissions":"4.3.0-beta-devapi-24514-05",
-        "System.Security.Cryptography.Primitives":"4.3.0-preview1-24515-01",
-        "System.Runtime.Serialization.Formatters":"4.3.0-beta-devapi-24514-05",
-        "System.Runtime.InteropServices" :"4.3.0-beta-devapi-24514-05",
-        "System.Text.RegularExpressions" : "4.3.0-beta-devapi-24514-05",
-        "System.Globalization": "4.3.0-beta-devapi-24514-05",
-        "System.Threading.Thread": "4.3.0-beta-devapi-24514-05"
+        "System.Resources.ResourceManager": "4.3.0-preview1-24515-01",
+        "System.Runtime": "4.3.0-preview1-24513-01",
+        "System.Threading": "4.0.0",
+
       },
       "imports": [
-        "dotnet5.1"
+        "dotnet5.4"
       ]
     },
     "net45": {

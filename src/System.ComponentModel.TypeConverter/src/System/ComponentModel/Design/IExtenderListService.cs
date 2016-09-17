@@ -1,17 +1,26 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
+//------------------------------------------------------------------------------
+// <copyright file="IExtenderListService.cs" company="Microsoft">
+//     Copyright (c) Microsoft Corporation.  All rights reserved.
+// </copyright>                                                                
+//------------------------------------------------------------------------------
 
-namespace System.ComponentModel.Design
-{
-    /// <summary>
+/*
+ */
+namespace System.ComponentModel.Design {
+    using System.Diagnostics;
+    using System;
+    using System.ComponentModel;
+    using Microsoft.Win32;
+
+    /// <devdoc>
     ///    <para>Provides an interface to list extender providers.</para>
-    /// </summary>
-    public interface IExtenderListService
-    {
-        /// <summary>
+    /// </devdoc>
+    public interface IExtenderListService {
+
+        /// <devdoc>
         ///    <para>Gets the set of extender providers for the component.</para>
-        /// </summary>
+        /// </devdoc>
         IExtenderProvider[] GetExtenderProviders();
     }
+
 }

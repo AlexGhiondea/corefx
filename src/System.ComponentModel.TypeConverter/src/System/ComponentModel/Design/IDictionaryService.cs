@@ -1,33 +1,42 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
+//------------------------------------------------------------------------------
+// <copyright file="IDictionaryService.cs" company="Microsoft">
+//     Copyright (c) Microsoft Corporation.  All rights reserved.
+// </copyright>                                                                
+//------------------------------------------------------------------------------
 
-namespace System.ComponentModel.Design
-{
-    /// <summary>
+/*
+ */
+namespace System.ComponentModel.Design {
+    using System.ComponentModel;
+
+    using System.Diagnostics;
+    
+    using System;
+
+    /// <devdoc>
     ///    <para>Provides a generic dictionary service that a designer can use
     ///       to store user-defined data on the site.</para>
-    /// </summary>
-    public interface IDictionaryService
-    {
-        /// <summary>
+    /// </devdoc>
+    public interface IDictionaryService {
+    
+        /// <devdoc>
         ///    <para>
         ///       Gets the key corresponding to the specified value.
         ///    </para>
-        /// </summary>
+        /// </devdoc>
         object GetKey(object value);
-
-        /// <summary>
+        
+        /// <devdoc>
         ///    <para>
         ///       Gets the value corresponding to the specified key.
         ///    </para>
-        /// </summary>
+        /// </devdoc>
         object GetValue(object key);
-
-        /// <summary>
+    
+        /// <devdoc>
         ///    <para> 
         ///       Sets the specified key-value pair.</para>
-        /// </summary>
+        /// </devdoc>
         void SetValue(object key, object value);
     }
 }
