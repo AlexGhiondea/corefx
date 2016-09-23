@@ -603,6 +603,8 @@ namespace System.IO
             }
         }
 
+        internal override bool IsClosed => _handle.IsClosed;
+
         [System.Security.SecuritySafeCritical]  // auto-generated
         public override void SetLength(long value)
         {
@@ -661,7 +663,7 @@ namespace System.IO
         }
 
         [System.Security.SecuritySafeCritical]  // auto-generated
-        public override int Read([In, Out] byte[] array, int offset, int count)
+        public override int Read(byte[] array, int offset, int count)
         {
             if (array == null)
                 throw new ArgumentNullException(nameof(array), SR.ArgumentNull_Buffer);
@@ -1688,33 +1690,16 @@ namespace System.IO
 
         public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
         {
-            // Validate arguments as would the base implementation
-            if (destination == null)
+            // If we're in sync mode, just use the shared CopyToAsync implementation that does
+            // typical read/write looping.  We also need to take this path if this is a derived
+            // instance from FileStream, as a derived type could have overridden ReadAsync, in which
+            // case our custom CopyToAsync implementation isn't necessarily correct.
+            if (!_isAsync || _parent.GetType() != typeof(FileStream))
             {
-                throw new ArgumentNullException(nameof(destination));
+                return StreamHelpers.ArrayPoolCopyToAsync(_parent, destination, bufferSize, cancellationToken);
             }
-            if (bufferSize <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(bufferSize), SR.ArgumentOutOfRange_NeedPosNum);
-            }
-            bool parentCanRead = _parent.CanRead;
-            if (!parentCanRead && !_parent.CanWrite)
-            {
-                throw new ObjectDisposedException(null, SR.ObjectDisposed_StreamClosed);
-            }
-            bool destinationCanWrite = destination.CanWrite;
-            if (!destination.CanRead && !destinationCanWrite)
-            {
-                throw new ObjectDisposedException(nameof(destination), SR.ObjectDisposed_StreamClosed);
-            }
-            if (!parentCanRead)
-            {
-                throw new NotSupportedException(SR.NotSupported_UnreadableStream);
-            }
-            if (!destinationCanWrite)
-            {
-                throw new NotSupportedException(SR.NotSupported_UnwritableStream);
-            }
+
+            StreamHelpers.ValidateCopyToAsyncArgs(_parent, destination, bufferSize);
 
             // Bail early for cancellation if cancellation has been requested
             if (cancellationToken.IsCancellationRequested)
@@ -1730,9 +1715,7 @@ namespace System.IO
 
             // Do the async copy, with differing implementations based on whether the FileStream was opened as async or sync
             Debug.Assert((_readPos == 0 && _readLen == 0 && _writePos >= 0) || (_writePos == 0 && _readPos <= _readLen), "We're either reading or writing, but not both.");
-            return _isAsync ?
-                AsyncModeCopyToAsync(destination, bufferSize, cancellationToken) :
-                base.CopyToAsync(destination, bufferSize, cancellationToken);
+            return AsyncModeCopyToAsync(destination, bufferSize, cancellationToken);
         }
 
         private async Task AsyncModeCopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
@@ -1783,6 +1766,7 @@ namespace System.IO
             // Further, typically the CopyToAsync buffer size will be larger than that used by the FileStream, such that
             // we'd likely be unable to use it anyway.  Instead, we rent the buffer from a pool.
             byte[] copyBuffer = ArrayPool<byte>.Shared.Rent(bufferSize);
+            bufferSize = 0; // repurpose bufferSize to be the high water mark for the buffer, to avoid an extra field in the state machine
 
             // Allocate an Overlapped we can use repeatedly for all operations
             var awaitableOverlapped = new PreAllocatedOverlapped(AsyncCopyToAwaitable.s_callback, readAwaitable, copyBuffer);
@@ -1878,14 +1862,23 @@ namespace System.IO
                         }
 
                         // Successful operation.  If we got zero bytes, we're done: exit the read/write loop.
-                        // Otherwise, update the read position for next time accordingly.
-                        if (readAwaitable._numBytes == 0)
+                        int numBytesRead = (int)readAwaitable._numBytes;
+                        if (numBytesRead == 0)
                         {
                             break;
                         }
-                        else if (canSeek)
+
+                        // Otherwise, update the read position for next time accordingly.
+                        if (canSeek)
                         {
-                            readAwaitable._position += (int)readAwaitable._numBytes;
+                            readAwaitable._position += numBytesRead;
+                        }
+
+                        // (and keep track of the maximum number of bytes in the buffer we used, to avoid excessive and unnecessary
+                        // clearing of the buffer before we return it to the pool)
+                        if (numBytesRead > bufferSize)
+                        {
+                            bufferSize = numBytesRead;
                         }
                     }
                     finally
@@ -1915,7 +1908,9 @@ namespace System.IO
                 // Cleanup from the whole copy operation
                 cancellationReg.Dispose();
                 awaitableOverlapped.Dispose();
-                ArrayPool<byte>.Shared.Return(copyBuffer, clearArray: true);
+
+                Array.Clear(copyBuffer, 0, bufferSize);
+                ArrayPool<byte>.Shared.Return(copyBuffer, clearArray: false);
 
                 // Make sure the stream's current position reflects where we ended up
                 if (!_handle.IsClosed && _parent.CanSeek)
@@ -2100,6 +2095,42 @@ namespace System.IO
             }
 
             return completedTask;
+        }
+
+        public override void Lock(long position, long length)
+        {
+            if (_handle.IsClosed)
+            {
+                throw Error.GetFileNotOpen();
+            }
+
+            int positionLow = unchecked((int)(position));
+            int positionHigh = unchecked((int)(position >> 32));
+            int lengthLow = unchecked((int)(length));
+            int lengthHigh = unchecked((int)(length >> 32));
+
+            if (!Interop.mincore.LockFile(_handle, positionLow, positionHigh, lengthLow, lengthHigh))
+            {
+                throw Win32Marshal.GetExceptionForLastWin32Error();
+            }
+        }
+
+        public override void Unlock(long position, long length)
+        {
+            if (_handle.IsClosed)
+            {
+                throw Error.GetFileNotOpen();
+            }
+
+            int positionLow = unchecked((int)(position));
+            int positionHigh = unchecked((int)(position >> 32));
+            int lengthLow = unchecked((int)(length));
+            int lengthHigh = unchecked((int)(length >> 32));
+
+            if (!Interop.mincore.UnlockFile(_handle, positionLow, positionHigh, lengthLow, lengthHigh))
+            {
+                throw Win32Marshal.GetExceptionForLastWin32Error();
+            }
         }
     }
 }

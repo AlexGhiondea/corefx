@@ -5,13 +5,13 @@
         "System.Collections": "4.3.0-preview1-24513-01",
         "System.Collections.NonGeneric": "4.3.0-preview1-24513-01",
         "System.Collections.Specialized": "4.3.0-preview1-24513-01",
-        "System.ComponentModel": "4.0.0",
-        "System.Diagnostics.Contracts": "4.0.0",
+        "System.ComponentModel": "4.3.0-beta-24522-03",
+        "System.Diagnostics.Contracts": "4.3.0-beta-24522-03",
         "System.Diagnostics.Debug": "4.3.0-beta-24523-04",
-        "System.Diagnostics.Tools": "4.0.0",
+        "System.Diagnostics.Tools": "4.3.0-beta-24522-03",
 	"System.Diagnostics.TraceSource":"4.3.0-beta-devapi-24514-05",
         "System.Globalization":"4.3.0-beta-devapi-24514-05",
-        "System.Linq": "4.0.0",
+        "System.Reflection": "4.3.0-beta-24522-03",
         "System.Reflection": "4.3.0-beta-devapi-24514-05",
         "System.Reflection.Extensions": "4.3.0-beta-devapi-24514-05",
         "System.Reflection.TypeExtensions": "4.3.0-beta-devapi-24514-05",
@@ -25,44 +25,16 @@
         "System.Threading": "4.3.0-beta-devapi-24514-05",
         "System.Threading.Thread": "4.3.0-beta-devapi-24514-05",
         "System.Threading.Tasks": "4.3.0-beta-devapi-24514-05",
+        "System.Threading.Timer": "4.3.0-beta-24522-03",
         "System.Text.RegularExpressions": "4.3.0-preview1-24523-01",
         "System.Net.WebClient": "4.3.0-beta-24523-04",
         "System.ComponentModel.EventBasedAsync":"4.3.0-beta-24523-04",
         "System.Security.Permissions": "4.3.0-beta-devapi-24514-05"
-      },
-      "imports": [
-        "dotnet5.6"
-      ]
-    },
-    "netstandard1.0": {
-      "dependencies": {
-        "System.Collections": "4.0.0",
-        "System.ComponentModel": "4.0.0",
-        "System.ComponentModel.Primitives": "4.1.0",
-        "System.Diagnostics.Contracts": "4.0.0",
-        "System.Diagnostics.Debug": "4.0.0",
-        "System.Diagnostics.Tools": "4.0.0",
-        "System.Globalization": "4.0.0",
-        "System.Reflection": "4.0.0",
-        "System.Reflection.Extensions": "4.0.0",
-        "System.Reflection.Primitives": "4.0.0",
-        "System.Resources.ResourceManager": "4.0.0",
-        "System.Runtime": "4.0.0",
-        "System.Runtime.Extensions": "4.0.0",
-        "System.Threading": "4.0.0"
-      },
-      "imports": [
-        "dotnet5.1"
-      ]
-    },
-    "net462": {
-      "dependencies": {
-        "Microsoft.TargetingPack.NETFramework.v4.6.2": "1.0.1"
       }
     },
-    "net45": {
+    "net463": {
       "dependencies": {
-        "Microsoft.TargetingPack.NETFramework.v4.5": "1.0.1"
+        "Microsoft.TargetingPack.NETFramework.v4.6": "1.0.1"
       }
     }
   }
