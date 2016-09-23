@@ -52,14 +52,14 @@ namespace System.ComponentModel {
             return ((int)_methodType).GetHashCode() ^ _isDefault.GetHashCode();
         }
 
-        // /// <internalonly/>
-        // public override bool Match(object obj) {
-        //     if (obj == this) {
-        //         return true;
-        //     }
+        /// <internalonly/>
+        public /*TODO override*/ bool Match(object obj) {
+            if (obj == this) {
+                return true;
+            }
 
-        //     DataObjectMethodAttribute other = obj as DataObjectMethodAttribute;
-        //     return (other != null) && (other.MethodType == MethodType);
-        // }
+            DataObjectMethodAttribute other = obj as DataObjectMethodAttribute;
+            return (other != null) && (other.MethodType == MethodType);
+        }
     }
 }

@@ -67,26 +67,26 @@ namespace System.ComponentModel {
             }
         }
 
-        // /// <internalonly/>
-        // /// <devdoc>
-        // ///    <para>
-        // ///       This defines a unique ID for this attribute type. It is used
-        // ///       by filtering algorithms to identify two attributes that are
-        // ///       the same type. For most attributes, this just returns the
-        // ///       Type instance for the attribute. LicenseProviderAttribute overrides this to include the type name and the
-        // ///       provider type name.
-        // ///    </para>
-        // /// </devdoc>
-        // public override object TypeId {
-        //     get {
-        //         string typeName = licenseProviderName;
+        /// <internalonly/>
+        /// <devdoc>
+        ///    <para>
+        ///       This defines a unique ID for this attribute type. It is used
+        ///       by filtering algorithms to identify two attributes that are
+        ///       the same type. For most attributes, this just returns the
+        ///       Type instance for the attribute. LicenseProviderAttribute overrides this to include the type name and the
+        ///       provider type name.
+        ///    </para>
+        /// </devdoc>
+        public /*TODO override*/ object TypeId {
+            get {
+                string typeName = licenseProviderName;
 
-        //         if (typeName == null && licenseProviderType != null) {
-        //             typeName = licenseProviderType.FullName;
-        //         }
-        //         return GetType().FullName + typeName;
-        //     }
-        // }
+                if (typeName == null && licenseProviderType != null) {
+                    typeName = licenseProviderType.FullName;
+                }
+                return GetType().FullName + typeName;
+            }
+        }
 
         /// <internalonly/>
         /// <devdoc>

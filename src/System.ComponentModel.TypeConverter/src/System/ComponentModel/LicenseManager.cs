@@ -6,7 +6,7 @@
 
 namespace System.ComponentModel {
     //using System.Runtime.Remoting.Activation;
-    using System.Runtime.Remoting;
+    //using System.Runtime.Remoting;
     using System.Runtime.InteropServices;
     using System.Reflection;
     using System.Diagnostics;
@@ -175,14 +175,14 @@ namespace System.ComponentModel {
             return null;
         }
 
-        /// <include file='doc\LicenseManager.uex' path='docs/doc[@for="LicenseManager.GetLicenseInteropHelperType"]/*' />
-        /// <devdoc>
-        ///     Retrieves the typehandle of the interop helper
-        /// </devdoc>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        private static IntPtr GetLicenseInteropHelperType() {
-            return typeof(LicenseInteropHelper).TypeHandle.Value;
-        }
+        // /// <include file='doc\LicenseManager.uex' path='docs/doc[@for="LicenseManager.GetLicenseInteropHelperType"]/*' />
+        // /// <devdoc>
+        // ///     Retrieves the typehandle of the interop helper
+        // /// </devdoc>
+        // [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        // private static IntPtr GetLicenseInteropHelperType() {
+        //     return typeof(LicenseInteropHelper).TypeHandle.Value;
+        // }
 
         /// <include file='doc\LicenseManager.uex' path='docs/doc[@for="LicenseManager.IsLicensed"]/*' />
         /// <devdoc>
@@ -273,7 +273,18 @@ namespace System.ComponentModel {
             if (provider == null && !GetCachedNoLicenseProvider(type)) {
                 // NOTE : Must look directly at the class, we want no inheritance.
                 //
-                LicenseProviderAttribute attr = (LicenseProviderAttribute)Attribute.GetCustomAttribute(type, typeof(LicenseProviderAttribute), false);
+
+                //TODO NETSTANDARD2.0
+                // original:                 LicenseProviderAttribute attr = (LicenseProviderAttribute)Attribute.GetCustomAttribute(type, typeof(LicenseProviderAttribute), false);
+
+                IEnumerator attributes = CustomAttributeExtensions.GetCustomAttributes<LicenseProviderAttribute>(type, false).GetEnumerator();
+                LicenseProviderAttribute attr = null;
+                if (attributes.MoveNext())
+                    attr = (LicenseProviderAttribute)attributes.Current;
+
+                // END_TODO NETSTANDARD2.0
+
+
                 if (attr != null) {
                     Type providerType = attr.LicenseProvider;
                     provider = GetCachedProviderInstance(providerType);

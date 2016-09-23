@@ -86,12 +86,12 @@ namespace System.ComponentModel
     //     public void Post(System.Threading.SendOrPostCallback d, object arg) { }
     //     public void PostOperationCompleted(System.Threading.SendOrPostCallback d, object arg) { }
     // }
-    public static partial class AsyncOperationManager
-    {
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
-        public static System.Threading.SynchronizationContext SynchronizationContext { get { throw null; } set { } }
-        public static System.ComponentModel.AsyncOperation CreateOperation(object userSuppliedState) { throw null; }
-    }
+    // public static partial class AsyncOperationManager
+    // {
+    //     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(2))]
+    //     public static System.Threading.SynchronizationContext SynchronizationContext { get { throw null; } set { } }
+    //     public static System.ComponentModel.AsyncOperation CreateOperation(object userSuppliedState) { throw null; }
+    // }
     // public partial class AttributeCollection : System.Collections.ICollection, System.Collections.IEnumerable
     // {
     //     public static readonly System.ComponentModel.AttributeCollection Empty;

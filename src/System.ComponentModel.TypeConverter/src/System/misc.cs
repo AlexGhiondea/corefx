@@ -1,9 +1,29 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reflection;
 
 namespace System
 {
-    using System.Reflection;
+    public class Stub
+    {
+        public static string Assembly_EscapedCodeBase()
+        {
+            return null;
+        }
+
+        public static string AppDomain_CurrentDomain_SetupInformation_LicenseFile(){
+        
+            //(string)AppDomain.CurrentDomain.SetupInformation.LicenseFile;
+            return null;
+        }
+
+        public static IEnumerable<Assembly> AppDomain_CurrentDomain_GetAssemblies(){
+            //AppDomain.CurrentDomain.GetAssemblies()
+            return null;
+        }
+    }
+
 
 	[AttributeUsage(AttributeTargets.All)]
 	internal sealed class SRDescriptionAttribute : DescriptionAttribute
@@ -83,6 +103,10 @@ namespace System
 
             return Activator.CreateInstance(type, flags, null, args, null);
         }
+    }
+
+    internal static class HResults{
+        internal const int License = unchecked((int)0x80131901);
     }
 
 }

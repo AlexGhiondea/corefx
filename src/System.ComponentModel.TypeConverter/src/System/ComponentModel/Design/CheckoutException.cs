@@ -26,7 +26,8 @@ namespace System.ComponentModel.Design {
     [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name="FullTrust")]
     [Serializable]
     public class CheckoutException : ExternalException {
-
+        
+        private const int E_ABORT = unchecked ((int)0x80004004);
         /// <devdoc>
         ///    <para>
         ///       Initializes a <see cref='System.ComponentModel.Design.CheckoutException'/> that specifies that the checkout
@@ -34,7 +35,7 @@ namespace System.ComponentModel.Design {
         ///       canceled. This field is read-only.
         ///    </para>
         /// </devdoc>
-        public readonly static CheckoutException Canceled = new CheckoutException(SR.CHECKOUTCanceled, NativeMethods.E_ABORT);
+        public readonly static CheckoutException Canceled = new CheckoutException(SR.CHECKOUTCanceled, E_ABORT);
 
         /// <devdoc>
         ///    <para>

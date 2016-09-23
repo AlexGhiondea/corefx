@@ -9,7 +9,7 @@ namespace System.ComponentModel {
     using System;
     using System.Diagnostics;
     using System.Reflection;
-    using System.Runtime.Remoting;
+    //using System.Runtime.Remoting;
     using System.Security.Permissions;
 
     /// <devdoc>

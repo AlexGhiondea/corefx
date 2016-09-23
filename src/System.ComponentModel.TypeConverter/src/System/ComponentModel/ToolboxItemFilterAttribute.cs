@@ -92,18 +92,18 @@ namespace System.ComponentModel {
             }
         }
 
-        // /// <devdoc>
-        // ///     The unique identifier for this attribute.  All ToolboxItemFilterAttributes with the same filter string
-        // ///     are considered the same, so they return the same TypeId.
-        // /// </devdoc>
-        // public override object TypeId {
-        //     get {
-        //         if (typeId == null) {
-        //             typeId = GetType().FullName + filterString;
-        //         }
-        //         return typeId;
-        //     }
-        // }
+        /// <devdoc>
+        ///     The unique identifier for this attribute.  All ToolboxItemFilterAttributes with the same filter string
+        ///     are considered the same, so they return the same TypeId.
+        /// </devdoc>
+        public /*TODO override*/ object TypeId {
+            get {
+                if (typeId == null) {
+                    typeId = GetType().FullName + filterString;
+                }
+                return typeId;
+            }
+        }
 
         public override bool Equals(object obj) {
             if (obj == this) {
@@ -119,21 +119,21 @@ namespace System.ComponentModel {
             return filterString.GetHashCode();
         }
     
-        // public override bool Match(object obj) {
+        public /*TODO override*/ bool Match(object obj) {
         
-        //     ToolboxItemFilterAttribute other = obj as ToolboxItemFilterAttribute;
-        //     if (other == null) {
-        //         return false;
-        //     }
+            ToolboxItemFilterAttribute other = obj as ToolboxItemFilterAttribute;
+            if (other == null) {
+                return false;
+            }
             
-        //     // different filter string kills a match immediately.
-        //     //
-        //     if (!other.FilterString.Equals(FilterString)) {
-        //         return false;
-        //     }
+            // different filter string kills a match immediately.
+            //
+            if (!other.FilterString.Equals(FilterString)) {
+                return false;
+            }
             
-        //     return true;
-        // }
+            return true;
+        }
 
         public override string ToString() {
             return filterString + "," + Enum.GetName(typeof(ToolboxItemFilterType), filterType);

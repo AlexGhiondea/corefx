@@ -5,11 +5,11 @@
 //------------------------------------------------------------------------------
 
 namespace System.ComponentModel.Design {
-    using System.Runtime.Remoting;
+    //using System.Runtime.Remoting;
     using System.Diagnostics;
     using System;
     using Microsoft.Win32;
-//    using System.Net;
+    using System.Net;
     using System.IO;
     using System.Reflection;
 //    using System.Reflection.Emit;
@@ -90,19 +90,23 @@ namespace System.ComponentModel.Design {
 
                 if (resourceAssembly == null) {
                     Debug.WriteLineIf(RuntimeLicenseContextSwitch.TraceVerbose,"resourceAssembly is null");
-                    string rawFile = (string)AppDomain.CurrentDomain.SetupInformation.LicenseFile;
+                    //TODO NETSTANDARD2.0 - //(string)AppDomain.CurrentDomain.SetupInformation.LicenseFile;
+                    string rawFile = System.Stub.AppDomain_CurrentDomain_SetupInformation_LicenseFile(); 
                     Debug.WriteLineIf(RuntimeLicenseContextSwitch.TraceVerbose,"rawfile: " + rawFile);
                     string codeBase;
                     
+                    // TODO NETSTANDARD2.0 -- review this
                     // FileIOPermission is required for ApplicationBase in URL-hosted domains
-                    FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
-                    perm.Assert();
-                    try {
-                        codeBase = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-                    }
-                    finally {
-                        CodeAccessPermission.RevertAssert();
-                    }
+                    //FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
+                    //perm.Assert();
+                    //try {
+
+                        //TODO NETSTANDARD2.0 - AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+                        codeBase =  System.Stub.AppDomain_CurrentDomain_SetupInformation_LicenseFile();
+                    //}
+                    //finally {
+                    //    CodeAccessPermission.RevertAssert();
+                    //}
                     if (rawFile != null && codeBase != null) {
                         licenseFile = new Uri(new Uri(codeBase), rawFile);
                     }
@@ -118,7 +122,9 @@ namespace System.ComponentModel.Design {
                         // If Assembly.EntryAssembly returns null, then we will 
                         // try everything!
                         // 
-                        foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies()) {
+
+                        //TODO: NETSTANDARD2.0 -  AppDomain.CurrentDomain.GetAssemblies()
+                        foreach (Assembly asm in System.Stub.AppDomain_CurrentDomain_GetAssemblies()) {
 
                             // Though, I could not repro this, we seem to be hitting an AssemblyBuilder
                             // when walking through all the assemblies in the current app domain. This throws an 
@@ -130,17 +136,21 @@ namespace System.ComponentModel.Design {
                             // file://fullpath/foo.exe
                             //
                             string fileName;
-                            FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
-                            perm.Assert();
-                            try
-                            {
-                                fileName = GetLocalPath(asm.EscapedCodeBase);
+
+                            //TODO NETSTANDARD2.0 - review 
+                            //FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
+                            //perm.Assert();
+                            //try
+                            //{
+
+                                // TODO NESTANDARD2.0: asm.EscapedCodeBase
+                                fileName = GetLocalPath(System.Stub.Assembly_EscapedCodeBase());
                                 fileName = new FileInfo(fileName).Name;
-                            }
-                            finally
-                            {
-                                CodeAccessPermission.RevertAssert();
-                            }
+                            //}
+                            //finally
+                            //{
+                            //   CodeAccessPermission.RevertAssert();
+                            //}
 
                             Stream s = asm.GetManifestResourceStream(fileName + ".licenses");
                             if (s == null) {
@@ -158,16 +168,21 @@ namespace System.ComponentModel.Design {
                     else if(!resourceAssembly.IsDynamic) { // EscapedCodeBase won't be supported by emitted assemblies anyway
                         Debug.WriteLineIf(RuntimeLicenseContextSwitch.TraceVerbose,"resourceAssembly is not null");
                         string fileName;
-                        FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
-                        perm.Assert();
-                        try
-                        {
-                            fileName = GetLocalPath(resourceAssembly.EscapedCodeBase);
-                        }
-                        finally
-                        {
-                            CodeAccessPermission.RevertAssert();
-                        }
+
+                        //TODO NETSTANDARD2.0 -- review
+                        //FileIOPermission perm = new FileIOPermission(PermissionState.Unrestricted);
+                        //perm.Assert();
+                        //try
+                        //{
+
+                            //TODO NETSTANDARD2.0: resourceAssembly.EscapedCodeBase
+                            fileName = GetLocalPath(System.Stub.Assembly_EscapedCodeBase());
+                        //}
+                        //finally
+                        //{
+                        //    CodeAccessPermission.RevertAssert();
+                        //}
+
                         fileName = Path.GetFileName(fileName); // we don't want to use FileInfo here... it requests FileIOPermission that we
                         // might now have... see VSWhidbey 527758
                         string licResourceName = fileName + ".licenses";
@@ -247,9 +262,10 @@ namespace System.ComponentModel.Design {
         static Stream OpenRead(Uri resourceUri) {
             Stream result = null;
 
-            PermissionSet perms = new PermissionSet(PermissionState.Unrestricted);
+            //TODO NETSTANDARD2.0 - review this
+            //PermissionSet perms = new PermissionSet(PermissionState.Unrestricted);
 
-            perms.Assert();
+            //perms.Assert();
             try {
                 WebClient webClient = new WebClient();
                 webClient.Credentials = CredentialCache.DefaultCredentials;
@@ -258,9 +274,9 @@ namespace System.ComponentModel.Design {
             catch (Exception e) {
                 Debug.Fail(e.ToString());
             }
-            finally {
-                CodeAccessPermission.RevertAssert();
-            }
+            //finally {
+            //    CodeAccessPermission.RevertAssert();
+            //}
 
             return result;
         }

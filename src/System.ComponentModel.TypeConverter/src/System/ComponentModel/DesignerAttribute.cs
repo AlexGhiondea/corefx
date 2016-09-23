@@ -107,29 +107,29 @@ namespace System.ComponentModel {
             }
         }
         
-        // /// <internalonly/>
-        // /// <devdoc>
-        // ///    <para>
-        // ///       This defines a unique ID for this attribute type. It is used
-        // ///       by filtering algorithms to identify two attributes that are
-        // ///       the same type. For most attributes, this just returns the
-        // ///       Type instance for the attribute. DesignerAttribute overrides
-        // ///       this to include the type of the designer base type.
-        // ///    </para>
-        // /// </devdoc>
-        // public override object TypeId {
-        //     get {
-        //         if (typeId == null) {
-        //             string baseType = designerBaseTypeName;
-        //             int comma = baseType.IndexOf(',');
-        //             if (comma != -1) {
-        //                 baseType = baseType.Substring(0, comma);
-        //             }
-        //             typeId = GetType().FullName + baseType;
-        //         }
-        //         return typeId;
-        //     }
-        // }
+        /// <internalonly/>
+        /// <devdoc>
+        ///    <para>
+        ///       This defines a unique ID for this attribute type. It is used
+        ///       by filtering algorithms to identify two attributes that are
+        ///       the same type. For most attributes, this just returns the
+        ///       Type instance for the attribute. DesignerAttribute overrides
+        ///       this to include the type of the designer base type.
+        ///    </para>
+        /// </devdoc>
+        public /*TODO override*/ object TypeId {
+            get {
+                if (typeId == null) {
+                    string baseType = designerBaseTypeName;
+                    int comma = baseType.IndexOf(',');
+                    if (comma != -1) {
+                        baseType = baseType.Substring(0, comma);
+                    }
+                    typeId = GetType().FullName + baseType;
+                }
+                return typeId;
+            }
+        }
 
         public override bool Equals(object obj) {
             if (obj == this) {
