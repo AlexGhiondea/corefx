@@ -103,18 +103,18 @@ namespace System.ComponentModel
         public override System.ComponentModel.PropertyDescriptorCollection GetProperties(System.ComponentModel.ITypeDescriptorContext context, object value, System.Attribute[] attributes) { throw null; }
         public override bool GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext context) { throw null; }
     }
-    public partial class Component : System.IDisposable
-    {
-        public Component() { }
-        protected virtual bool CanRaiseEvents { get { throw null; } }
-        protected bool DesignMode { get { throw null; } }
-        public virtual System.ComponentModel.ISite Site { get { throw null; } set { } }
-        public void Dispose() { }
-        protected virtual void Dispose(bool disposing) { }
-        ~Component() { }
-        protected virtual object GetService(System.Type service) { throw null; }
-        public override string ToString() { throw null; }
-    }
+    // public partial class Component : System.IDisposable
+    // {
+    //     public Component() { }
+    //     protected virtual bool CanRaiseEvents { get { throw null; } }
+    //     protected bool DesignMode { get { throw null; } }
+    //     public virtual System.ComponentModel.ISite Site { get { throw null; } set { } }
+    //     public void Dispose() { }
+    //     protected virtual void Dispose(bool disposing) { }
+    //     ~Component() { }
+    //     protected virtual object GetService(System.Type service) { throw null; }
+    //     public override string ToString() { throw null; }
+    // }
     public abstract partial class CustomTypeDescriptor : System.ComponentModel.ICustomTypeDescriptor
     {
         protected CustomTypeDescriptor() { }
