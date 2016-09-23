@@ -13,8 +13,8 @@ namespace System.ComponentModel {
     using System.Diagnostics;
     using System.Globalization;
     using System.Reflection;
-    using System.Runtime.Serialization.Formatters;
-    using System.Runtime.Remoting;
+    //using System.Runtime.Serialization.Formatters;
+    ///using System.Runtime.Remoting;
     using System.Runtime.InteropServices;
     using System.Threading;
     using System.Security.Permissions;
@@ -90,10 +90,11 @@ namespace System.ComponentModel {
                 }
                 CultureInfo retVal = null;
 
-                CultureInfo currentUICulture = Thread.CurrentThread.CurrentUICulture;
+                CultureInfo currentUICulture = CultureInfo.CurrentUICulture; // original: CultureInfo.CurrentUICulture; 
 
                 if (culture != null && culture.Equals(CultureInfo.InvariantCulture)) {
-                    Thread.CurrentThread.CurrentUICulture = culture;
+                    //Thread.CurrentThread.CurrentUICulture = culture;
+                    CultureInfo.CurrentUICulture = culture;
                 }
 
                 try {
@@ -142,7 +143,8 @@ namespace System.ComponentModel {
                 }
 
                 finally {
-                    Thread.CurrentThread.CurrentUICulture = currentUICulture;
+                    //Thread.CurrentThread.CurrentUICulture = culture;
+                    CultureInfo.CurrentUICulture = culture;
                 }
                 
                 // No good.  We can't support it.
@@ -171,10 +173,11 @@ namespace System.ComponentModel {
             if (destinationType == typeof(string)) {
 
                 string retVal;
-                CultureInfo currentUICulture = Thread.CurrentThread.CurrentUICulture;
+                CultureInfo currentUICulture = CultureInfo.CurrentUICulture; //Thread.CurrentThread.CurrentUICulture = culture;
 
                 if (culture != null && culture.Equals(CultureInfo.InvariantCulture)) {
-                    Thread.CurrentThread.CurrentUICulture = culture;
+                    //Thread.CurrentThread.CurrentUICulture = culture;
+                    CultureInfo.CurrentUICulture = culture;
                 }
 
                 try {
@@ -186,7 +189,9 @@ namespace System.ComponentModel {
                     }
                 }
                 finally {
-                    Thread.CurrentThread.CurrentUICulture = currentUICulture;
+                    //Thread.CurrentThread.CurrentUICulture = culture;
+                    CultureInfo.CurrentUICulture = culture;
+
                 }
 
                 return retVal;

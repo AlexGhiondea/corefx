@@ -128,11 +128,17 @@
     <Compile Include="System\ComponentModel\PropertyChangedEventHandler.cs" />
     <Compile Include="System\ComponentModel\INotifyPropertyChanged.cs" />
     <Compile Include="System\ComponentModel\ComplexBindingPropertiesAttribute.cs" />
-
     <Compile Include="System\ComponentModel\ComponentConverter.cs" />
     <Compile Include="System\ComponentModel\ReferenceConverter.cs" />
     <Compile Include="System\ComponentModel\Design\IReferenceService.cs" />
-    
+    <Compile Include="System\ComponentModel\BaseComponentEditor.cs" />
+    <Compile Include="System\ComponentModel\Container.cs" />
+    <Compile Include="System\ComponentModel\ContainerFilterService.cs" />
+    <Compile Include="System\ComponentModel\design\InheritanceAttribute.cs" />
+    <Compile Include="System\ComponentModel\design\InheritanceLevel.cs" />
+
+    <Compile Include="System\ComponentModel\CultureInfoConverter.cs" />
+    <Compile Include="System\ComponentModel\Design\Serialization\InstanceDescriptor.cs" />
 
     <!-- Random pieces of code required to build  -->
     <Compile Include="System\misc.cs" />
