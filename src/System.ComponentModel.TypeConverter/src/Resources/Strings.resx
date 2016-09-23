@@ -399,4 +399,7 @@
    <data name="toStringNone" xml:space="preserve">
     <value>(none)</value>
   </data>
+   <data name="MemberRelationshipService_RelationshipNotSupported" xml:space="preserve">
+    <value>Relationships between {0}.{1} and {2}.{3} are not supported.</value>
+  </data>
 </root>

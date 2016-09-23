@@ -92,9 +92,9 @@ namespace System.ComponentModel.Design {
             if (promote) {
                 IServiceContainer container = Container;
                 if (container != null) {
-                    Debug.Indent();
+                    System.Stub.Debug_Indent();
                     Debug.WriteLineIf(TRACESERVICE.TraceVerbose, "Promoting to container");
-                    Debug.Unindent();
+                    System.Stub.Debug_Unindent();	
                     container.AddService(serviceType, serviceInstance, promote);
                     return;
                 }
@@ -131,9 +131,9 @@ namespace System.ComponentModel.Design {
             if (promote) {
                 IServiceContainer container = Container;
                 if (container != null) {
-                    Debug.Indent();
+                    System.Stub.Debug_Indent();
                     Debug.WriteLineIf(TRACESERVICE.TraceVerbose, "Promoting to container");
-                    Debug.Unindent();
+                    System.Stub.Debug_Unindent();	
                     container.AddService(serviceType, callback, promote);
                     return;
                 }
@@ -185,7 +185,7 @@ namespace System.ComponentModel.Design {
             object service = null;
             
             Debug.WriteLineIf(TRACESERVICE.TraceVerbose, "Searching for service " + serviceType.Name);
-            Debug.Indent();
+            System.Stub.Debug_Indent();
             
             // Try locally.  We first test for services we
             // implement and then look in our service collection.
@@ -234,7 +234,7 @@ namespace System.ComponentModel.Design {
                 Debug.WriteLine("******************************************");
             }
             #endif
-            Debug.Unindent();
+            System.Stub.Debug_Unindent();	
             
             return service;
         }
@@ -254,9 +254,9 @@ namespace System.ComponentModel.Design {
             if (promote) {
                 IServiceContainer container = Container;
                 if (container != null) {
-                    Debug.Indent();
+                    System.Stub.Debug_Indent();
                     Debug.WriteLineIf(TRACESERVICE.TraceVerbose, "Invoking parent container");
-                    Debug.Unindent();
+                    System.Stub.Debug_Unindent();	
                     container.RemoveService(serviceType, promote);
                     return;
                 }

@@ -37,8 +37,12 @@ namespace System.ComponentModel {
         /// </devdoc>
         private CultureInfo NeutralResourcesCulture {
             get {
-                if (_neutralResourcesCulture == null && MainAssembly != null) {
-                    _neutralResourcesCulture = GetNeutralResourcesLanguage(MainAssembly);
+                // TODO: NETSTANDARD2.0: MainAssembly() != null
+                if (_neutralResourcesCulture == null && System.Stub.ResourceManager_MainAssembly() != null) {
+                // TODO: NETSTANDARD2.0: MainAssembly
+                // TODO: NETSTANDARD2.0: GetNeutralResourcesLanguage
+                //  GetNeutralResourcesLanguage(MainAssembly)
+                    _neutralResourcesCulture = System.Stub.ResourceManager_GetNeutralResourceLanguage(System.Stub.ResourceManager_MainAssembly());
                 }
 
                 return _neutralResourcesCulture;
@@ -95,7 +99,8 @@ namespace System.ComponentModel {
             }
             else {
                 resources = (SortedList<string, object>)_resourceSets[culture];
-                if (resources == null || (resources.Comparer.Equals(StringComparer.OrdinalIgnoreCase) != IgnoreCase)) {
+                // TODO: NETSTANDARD2.0
+                if (resources == null || (resources.Comparer.Equals(StringComparer.OrdinalIgnoreCase) != System.Stub.ResourceManager_IgnoreCase())) {
                     ResourceSet dummy;
                     resources = FillResources(culture, out dummy);
                     _resourceSets[culture] = resources;
@@ -103,8 +108,8 @@ namespace System.ComponentModel {
             }
 
             BindingFlags flags = BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.Instance;
-             
-            if (IgnoreCase) {
+            // TODO: NETSTANDARD2.0
+            if (System.Stub.ResourceManager_IgnoreCase()	) {
                 flags |= BindingFlags.IgnoreCase;
             }
 
@@ -125,7 +130,8 @@ namespace System.ComponentModel {
                     continue;
                 }
 
-                if (IgnoreCase) {
+                // TODO: NETSTANDARD2.0
+                if (System.Stub.ResourceManager_IgnoreCase()	) {
                     if (string.Compare(key, 0, objectName, 0, objectName.Length, StringComparison.OrdinalIgnoreCase) != 0) {
                         continue;
                     }
@@ -149,7 +155,8 @@ namespace System.ComponentModel {
                 string propName = key.Substring(idx + 1);
 
                 if (componentReflect) {
-                    PropertyDescriptor prop = TypeDescriptor.GetProperties(value).Find(propName, IgnoreCase);
+                    // TODO: NETSTANDARD2.0
+                    PropertyDescriptor prop = TypeDescriptor.GetProperties(value).Find(propName, System.Stub.ResourceManager_IgnoreCase());
 
                     if (prop != null && !prop.IsReadOnly && (kvp.Value == null || prop.PropertyType.IsInstanceOfType(kvp.Value))) {
                         prop.SetValue(value, kvp.Value);
@@ -198,7 +205,8 @@ namespace System.ComponentModel {
 
                 // We're at the bottom, so create the sorted dictionary
                 // 
-                if (IgnoreCase) {
+                // TODO: NETSTANDARD2.0
+                if (System.Stub.ResourceManager_IgnoreCase()	) {
                     sd = new SortedList<string, object>(StringComparer.OrdinalIgnoreCase);
                 }
                 else {
@@ -217,7 +225,8 @@ namespace System.ComponentModel {
             // parent resource set's instance was -- if they are the
             // same, we're looking at a cache we've already applied.
             //
-            resourceSet = GetResourceSet(culture, true, true);
+            //NETSTANDARD2.0 - GetResourceSet(culture, true, true);
+            resourceSet = System.Stub.ResourceManager_GetResourceSet(culture, true, true);
             if (resourceSet != null && !object.ReferenceEquals(resourceSet, parentResourceSet)) {
                 foreach(DictionaryEntry de in resourceSet) {
                     sd[(string)de.Key] = de.Value;

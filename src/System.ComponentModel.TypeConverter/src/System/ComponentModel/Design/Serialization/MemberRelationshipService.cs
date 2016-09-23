@@ -104,7 +104,7 @@ namespace System.ComponentModel.Design.Serialization {
                 if (relName == null) {
                     relName = relationship.Owner.ToString();
                 }
-                throw new ArgumentException(SR.GetString(SR.MemberRelationshipService_RelationshipNotSupported, sourceName, source.Member.Name, relName, relationship.Member.Name));
+                throw new ArgumentException(SR.Format(SR.MemberRelationshipService_RelationshipNotSupported, sourceName, source.Member.Name, relName, relationship.Member.Name));
             }
 
             if (_relationships == null) {
