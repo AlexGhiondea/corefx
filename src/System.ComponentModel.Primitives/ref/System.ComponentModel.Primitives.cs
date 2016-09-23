@@ -65,8 +65,7 @@ namespace System.ComponentModel
         protected virtual object GetService(System.Type service) { throw null; }
         public override string ToString() { throw null; }
     }
-    public partial class ComponentCollection //: System.Collections.ReadOnlyCollectionBase
-
+    public partial class ComponentCollection : System.Collections.ReadOnlyCollectionBase
     {
         internal ComponentCollection() { }
         public ComponentCollection(System.ComponentModel.IComponent[] components) { }

@@ -97,9 +97,45 @@
   </ItemGroup>
 
 
-
+  <!-- New code introduced for netstandard 2.0 -->
   <ItemGroup>
     <Compile Include="System\ComponentModel\AddingNewEventArgs.cs" />
+    <Compile Include="System\ComponentModel\AddingNewEventHandler.cs" />
+    <Compile Include="System\ComponentModel\AmbientValueAttribute.cs" />
+    <Compile Include="System\ComponentModel\AsyncOperationManager.cs" />
+    <Compile Include="System\ComponentModel\AsyncOperation.cs" />
+    <Compile Include="System\ComponentModel\BackgroundWorker.cs" />
+    <Compile Include="System\ComponentModel\DoWorkEventHandler.cs" />
+    <Compile Include="System\ComponentModel\DoWorkEventArgs.cs" />
+    <Compile Include="System\ComponentModel\ProgressChangedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\ProgressChangedEventHandler.cs" />
+    <Compile Include="System\ComponentModel\RunWorkerCompletedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\RunWorkerCompletedEventHandler.cs" />
+    <Compile Include="System\ComponentModel\AsyncCompletedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\AsyncCompletedEventHandler.cs" />
+    <Compile Include="System\ComponentModel\BindableAttribute.cs" />
+    <Compile Include="System\ComponentModel\BindableSupport.cs" />
+    <Compile Include="System\ComponentModel\BindingDirection.cs" />  
+    <Compile Include="System\ComponentModel\BindingList.cs" />  
+    <Compile Include="System\ComponentModel\IBindingList.cs" />  
+    <Compile Include="System\ComponentModel\ICancelAddNew.cs" />  
+    <Compile Include="System\ComponentModel\IRaiseItemChangedEvents.cs" />  
+    <Compile Include="System\ComponentModel\ListChangedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\ListChangedEventHandler.cs" />
+    <Compile Include="System\ComponentModel\ListSortDirection.cs" />
+    <Compile Include="System\ComponentModel\ListChangedType.cs" />
+    <Compile Include="System\ComponentModel\PropertyChangedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\PropertyChangedEventHandler.cs" />
+    <Compile Include="System\ComponentModel\INotifyPropertyChanged.cs" />
+    <Compile Include="System\ComponentModel\ComplexBindingPropertiesAttribute.cs" />
+
+    <Compile Include="System\ComponentModel\ComponentConverter.cs" />
+    <Compile Include="System\ComponentModel\ReferenceConverter.cs" />
+    <Compile Include="System\ComponentModel\Design\IReferenceService.cs" />
+    
+
+    <!-- Random pieces of code required to build  -->
+    <Compile Include="System\misc.cs" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetGroup)'==''">

@@ -12,8 +12,8 @@ namespace System.ComponentModel {
     using System.ComponentModel;
     using System.ComponentModel.Design;
     using System.Diagnostics;
-    using System.Runtime.Serialization.Formatters;
-    using System.Runtime.Remoting;
+    //using System.Runtime.Serialization.Formatters;
+    //using System.Runtime.Remoting;
     using System.Runtime.InteropServices;
     using System.Security.Permissions;
 

@@ -13,8 +13,8 @@ namespace System.ComponentModel {
     using System.Diagnostics;
     using System.Globalization;
     using System.Runtime.InteropServices;
-    using System.Runtime.Remoting;
-    using System.Runtime.Serialization.Formatters;
+    //using System.Runtime.Remoting;
+    //using System.Runtime.Serialization.Formatters;
     using System.Security.Permissions;
 
     /// <devdoc>

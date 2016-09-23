@@ -3,6 +3,8 @@ using System.ComponentModel;
 
 namespace System
 {
+    using System.Reflection;
+
 	[AttributeUsage(AttributeTargets.All)]
 	internal sealed class SRDescriptionAttribute : DescriptionAttribute
 	{
@@ -38,6 +40,51 @@ namespace System
 			return SR.GetResourceString(value,"");
 		}
 	}
+
+
+    // from Misc/SecurityUtils.cs
+
+    internal static class SecurityUtils {
+        /// <devdoc>
+        ///     This helper method provides safe access to Activator.CreateInstance.
+        ///     NOTE: This overload will work only with public .ctors. 
+        /// </devdoc>
+        internal static object SecureCreateInstance(Type type) {
+            return SecureCreateInstance(type, null);
+        }
+
+        /// <devdoc>
+        ///     This helper method provides safe access to Activator.CreateInstance.
+        ///     Set allowNonPublic to true if you want non public ctors to be used. 
+        /// </devdoc>
+        internal static object SecureCreateInstance(Type type, object[] args) {
+            if (type == null) {
+                throw new ArgumentNullException("type");
+            }
+
+            BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.CreateInstance;
+           
+            // // if it's an internal type, we demand reflection permission.
+            // if (!type.IsVisible) {
+            //     DemandReflectionAccess(type);
+            // }
+            // else if (allowNonPublic && !HasReflectionPermission(type)) {
+            //     // Someone is trying to instantiate a public type in *our* assembly, but does not
+            //     // have full reflection permission. We shouldn't pass BindingFlags.NonPublic in this case.
+            //     // The reason we don't directly demand the permission here is because we don't know whether
+            //     // a public or non-public .ctor will be invoked. We want to allow the public .ctor case to
+            //     // succeed.
+            //     allowNonPublic = false;
+            // }
+            
+            // if (allowNonPublic) {
+            //     flags |= BindingFlags.NonPublic;
+            // }
+
+            return Activator.CreateInstance(type, flags, null, args, null);
+        }
+    }
+
 }
 
 namespace System.Resources
