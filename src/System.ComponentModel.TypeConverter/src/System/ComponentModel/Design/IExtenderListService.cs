@@ -10,7 +10,7 @@ namespace System.ComponentModel.Design {
     using System.Diagnostics;
     using System;
     using System.ComponentModel;
-    using Microsoft.Win32;
+    //using Microsoft.Win32;
 
     /// <devdoc>
     ///    <para>Provides an interface to list extender providers.</para>
