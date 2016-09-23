@@ -953,7 +953,7 @@ namespace System.ComponentModel
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
-    public partial class MaskedTextProvider : System.ICloneable
+    public partial class MaskedTextProvider //TODO: NETSTANDARD2.0 -- requires ICloneable : System.ICloneable
     {
         public MaskedTextProvider(string mask) { }
         public MaskedTextProvider(string mask, bool restrictToAscii) { }
@@ -2294,667 +2294,667 @@ namespace System.ComponentModel.Design.Serialization
         void System.IDisposable.Dispose() { }
     }
 }
-namespace System.Timers
-{
-    public partial class ElapsedEventArgs : System.EventArgs
-    {
-        internal ElapsedEventArgs() { }
-        public System.DateTime SignalTime { get { throw null; } }
-    }
-    public delegate void ElapsedEventHandler(object sender, System.Timers.ElapsedEventArgs e);
-    [System.ComponentModel.DefaultEventAttribute("Elapsed")]
-    [System.ComponentModel.DefaultPropertyAttribute("Interval")]
-    public partial class Timer : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize
-    {
-        public Timer() { }
-        public Timer(double interval) { }
-        [System.ComponentModel.CategoryAttribute("Behavior")]
-        [System.ComponentModel.DefaultValueAttribute(true)]
-        [System.Timers.TimersDescriptionAttribute("TimerAutoReset")]
-        public bool AutoReset { get { throw null; } set { } }
-        [System.ComponentModel.CategoryAttribute("Behavior")]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        [System.Timers.TimersDescriptionAttribute("TimerEnabled")]
-        public bool Enabled { get { throw null; } set { } }
-        [System.ComponentModel.CategoryAttribute("Behavior")]
-        [System.ComponentModel.DefaultValueAttribute(100)]
-        [System.ComponentModel.SettingsBindableAttribute(true)]
-        [System.Timers.TimersDescriptionAttribute("TimerInterval")]
-        public double Interval { get { throw null; } set { } }
-        public override System.ComponentModel.ISite Site { get { throw null; } set { } }
-        [System.ComponentModel.BrowsableAttribute(false)]
-        [System.ComponentModel.DefaultValueAttribute(null)]
-        [System.Timers.TimersDescriptionAttribute("TimerSynchronizingObject")]
-        public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
-        [System.ComponentModel.CategoryAttribute("Behavior")]
-        [System.Timers.TimersDescriptionAttribute("TimerIntervalElapsed")]
-        public event System.Timers.ElapsedEventHandler Elapsed { add { } remove { } }
-        public void BeginInit() { }
-        public void Close() { }
-        protected override void Dispose(bool disposing) { }
-        public void EndInit() { }
-        public void Start() { }
-        public void Stop() { }
-    }
-    [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
-    public partial class TimersDescriptionAttribute : System.ComponentModel.DescriptionAttribute
-    {
-        public TimersDescriptionAttribute(string description) { }
-        public override string Description { get { throw null; } }
-    }
-}
-namespace System.Diagnostics
-{
-    // [System.ComponentModel.DefaultEventAttribute("Exited")]
-    // [System.ComponentModel.DefaultPropertyAttribute("StartInfo")]
-    // public partial class Process : System.ComponentModel.Component
+// namespace System.Timers
+// {
+//     public partial class ElapsedEventArgs : System.EventArgs
+//     {
+//         internal ElapsedEventArgs() { }
+//         public System.DateTime SignalTime { get { throw null; } }
+//     }
+//     public delegate void ElapsedEventHandler(object sender, System.Timers.ElapsedEventArgs e);
+//     [System.ComponentModel.DefaultEventAttribute("Elapsed")]
+//     [System.ComponentModel.DefaultPropertyAttribute("Interval")]
+//     public partial class Timer : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize
+//     {
+//         public Timer() { }
+//         public Timer(double interval) { }
+//         [System.ComponentModel.CategoryAttribute("Behavior")]
+//         [System.ComponentModel.DefaultValueAttribute(true)]
+//         [System.Timers.TimersDescriptionAttribute("TimerAutoReset")]
+//         public bool AutoReset { get { throw null; } set { } }
+//         [System.ComponentModel.CategoryAttribute("Behavior")]
+//         [System.ComponentModel.DefaultValueAttribute(false)]
+//         [System.Timers.TimersDescriptionAttribute("TimerEnabled")]
+//         public bool Enabled { get { throw null; } set { } }
+//         [System.ComponentModel.CategoryAttribute("Behavior")]
+//         [System.ComponentModel.DefaultValueAttribute(100)]
+//         [System.ComponentModel.SettingsBindableAttribute(true)]
+//         [System.Timers.TimersDescriptionAttribute("TimerInterval")]
+//         public double Interval { get { throw null; } set { } }
+//         public override System.ComponentModel.ISite Site { get { throw null; } set { } }
+//         [System.ComponentModel.BrowsableAttribute(false)]
+//         [System.ComponentModel.DefaultValueAttribute(null)]
+//         [System.Timers.TimersDescriptionAttribute("TimerSynchronizingObject")]
+//         public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
+//         [System.ComponentModel.CategoryAttribute("Behavior")]
+//         [System.Timers.TimersDescriptionAttribute("TimerIntervalElapsed")]
+//         public event System.Timers.ElapsedEventHandler Elapsed { add { } remove { } }
+//         public void BeginInit() { }
+//         public void Close() { }
+//         protected override void Dispose(bool disposing) { }
+//         public void EndInit() { }
+//         public void Start() { }
+//         public void Stop() { }
+//     }
+//     [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
+//     public partial class TimersDescriptionAttribute : System.ComponentModel.DescriptionAttribute
+//     {
+//         public TimersDescriptionAttribute(string description) { }
+//         public override string Description { get { throw null; } }
+//     }
+// }
+// namespace System.Diagnostics
+// {
+//     // [System.ComponentModel.DefaultEventAttribute("Exited")]
+//     // [System.ComponentModel.DefaultPropertyAttribute("StartInfo")]
+//     // public partial class Process : System.ComponentModel.Component
+//     // {
+//     //     public Process() { }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public int BasePriority { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DefaultValueAttribute(false)]
+//     //     public bool EnableRaisingEvents { get { throw null; } set { } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public int ExitCode { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.DateTime ExitTime { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IntPtr Handle { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public int HandleCount { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public bool HasExited { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public int Id { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public string MachineName { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.Diagnostics.ProcessModule MainModule { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IntPtr MainWindowHandle { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public string MainWindowTitle { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IntPtr MaxWorkingSet { get { throw null; } set { } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IntPtr MinWorkingSet { get { throw null; } set { } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.Diagnostics.ProcessModuleCollection Modules { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.NonpagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int NonpagedSystemMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long NonpagedSystemMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PagedMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PagedMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PagedSystemMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PagedSystemMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakPagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PeakPagedMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PeakPagedMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakVirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PeakVirtualMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PeakVirtualMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakWorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PeakWorkingSet { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PeakWorkingSet64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public bool PriorityBoostEnabled { get { throw null; } set { } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.Diagnostics.ProcessPriorityClass PriorityClass { get { throw null; } set { } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PrivateMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int PrivateMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long PrivateMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.TimeSpan PrivilegedProcessorTime { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public string ProcessName { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IntPtr ProcessorAffinity { get { throw null; } set { } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public bool Responding { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public int SessionId { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IO.StreamReader StandardError { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IO.StreamWriter StandardInput { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.IO.StreamReader StandardOutput { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(2))]
+//     //     public System.Diagnostics.ProcessStartInfo StartInfo { get { throw null; } set { } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.DateTime StartTime { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DefaultValueAttribute(null)]
+//     //     public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.Diagnostics.ProcessThreadCollection Threads { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.TimeSpan TotalProcessorTime { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public System.TimeSpan UserProcessorTime { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.VirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int VirtualMemorySize { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long VirtualMemorySize64 { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.WorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
+//     //     public int WorkingSet { get { throw null; } }
+//     //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
+//     //     public long WorkingSet64 { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(true)]
+//     //     public event System.Diagnostics.DataReceivedEventHandler ErrorDataReceived { add { } remove { } }
+//     //     [System.ComponentModel.CategoryAttribute("Behavior")]
+//     //     public event System.EventHandler Exited { add { } remove { } }
+//     //     [System.ComponentModel.BrowsableAttribute(true)]
+//     //     public event System.Diagnostics.DataReceivedEventHandler OutputDataReceived { add { } remove { } }
+//     //     public void BeginErrorReadLine() { }
+//     //     public void BeginOutputReadLine() { }
+//     //     public void CancelErrorRead() { }
+//     //     public void CancelOutputRead() { }
+//     //     public void Close() { }
+//     //     public bool CloseMainWindow() { throw null; }
+//     //     protected override void Dispose(bool disposing) { }
+//     //     public static void EnterDebugMode() { }
+//     //     public static System.Diagnostics.Process GetCurrentProcess() { throw null; }
+//     //     public static System.Diagnostics.Process GetProcessById(int processId) { throw null; }
+//     //     public static System.Diagnostics.Process GetProcessById(int processId, string machineName) { throw null; }
+//     //     public static System.Diagnostics.Process[] GetProcesses() { throw null; }
+//     //     public static System.Diagnostics.Process[] GetProcesses(string machineName) { throw null; }
+//     //     public static System.Diagnostics.Process[] GetProcessesByName(string processName) { throw null; }
+//     //     public static System.Diagnostics.Process[] GetProcessesByName(string processName, string machineName) { throw null; }
+//     //     public void Kill() { }
+//     //     public static void LeaveDebugMode() { }
+//     //     protected void OnExited() { }
+//     //     public void Refresh() { }
+//     //     public bool Start() { throw null; }
+//     //     public static System.Diagnostics.Process Start(System.Diagnostics.ProcessStartInfo startInfo) { throw null; }
+//     //     public static System.Diagnostics.Process Start(string fileName) { throw null; }
+//     //     public static System.Diagnostics.Process Start(string fileName, string arguments) { throw null; }
+//     //     public static System.Diagnostics.Process Start(string fileName, string userName, System.Security.SecureString password, string domain) { throw null; }
+//     //     public static System.Diagnostics.Process Start(string fileName, string arguments, string userName, System.Security.SecureString password, string domain) { throw null; }
+//     //     public override string ToString() { throw null; }
+//     //     public void WaitForExit() { }
+//     //     public bool WaitForExit(int milliseconds) { throw null; }
+//     //     public bool WaitForInputIdle() { throw null; }
+//     //     public bool WaitForInputIdle(int milliseconds) { throw null; }
+//     // }
+//     // public partial class ProcessModule : System.ComponentModel.Component
+//     // {
+//     //     internal ProcessModule() { }
+//     //     public System.IntPtr BaseAddress { get { throw null; } }
+//     //     public System.IntPtr EntryPointAddress { get { throw null; } }
+//     //     public string FileName { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     public System.Diagnostics.FileVersionInfo FileVersionInfo { get { throw null; } }
+//     //     public int ModuleMemorySize { get { throw null; } }
+//     //     public string ModuleName { get { throw null; } }
+//     //     public override string ToString() { throw null; }
+//     // }
+//     public partial class ProcessModuleCollection : System.Collections.ReadOnlyCollectionBase
+//     {
+//         protected ProcessModuleCollection() { }
+//         public ProcessModuleCollection(System.Diagnostics.ProcessModule[] processModules) { }
+//         public System.Diagnostics.ProcessModule this[int index] { get { throw null; } }
+//         public bool Contains(System.Diagnostics.ProcessModule module) { throw null; }
+//         public void CopyTo(System.Diagnostics.ProcessModule[] array, int index) { }
+//         public int IndexOf(System.Diagnostics.ProcessModule module) { throw null; }
+//     }    
+//     public enum ProcessPriorityClass
+//     {
+//         AboveNormal = 32768,
+//         BelowNormal = 16384,
+//         High = 128,
+//         Idle = 64,
+//         Normal = 32,
+//         RealTime = 256,
+//     }    
+//     // public partial class ProcessThread : System.ComponentModel.Component
+//     // {
+//     //     internal ProcessThread() { }
+//     //     public int BasePriority { get { throw null; } }
+//     //     public int CurrentPriority { get { throw null; } }
+//     //     public int Id { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     public int IdealProcessor { set { } }
+//     //     public bool PriorityBoostEnabled { get { throw null; } set { } }
+//     //     public System.Diagnostics.ThreadPriorityLevel PriorityLevel { get { throw null; } set { } }
+//     //     public System.TimeSpan PrivilegedProcessorTime { get { throw null; } }
+//     //     [System.ComponentModel.BrowsableAttribute(false)]
+//     //     public System.IntPtr ProcessorAffinity { set { } }
+//     //     public System.IntPtr StartAddress { get { throw null; } }
+//     //     public System.DateTime StartTime { get { throw null; } }
+//     //     public System.Diagnostics.ThreadState ThreadState { get { throw null; } }
+//     //     public System.TimeSpan TotalProcessorTime { get { throw null; } }
+//     //     public System.TimeSpan UserProcessorTime { get { throw null; } }
+//     //     public System.Diagnostics.ThreadWaitReason WaitReason { get { throw null; } }
+//     //     public void ResetIdealProcessor() { }
+//     // }
+//     public partial class ProcessThreadCollection : System.Collections.ReadOnlyCollectionBase
+//     {
+//         protected ProcessThreadCollection() { }
+//         public ProcessThreadCollection(System.Diagnostics.ProcessThread[] processThreads) { }
+//         public System.Diagnostics.ProcessThread this[int index] { get { throw null; } }
+//         public int Add(System.Diagnostics.ProcessThread thread) { throw null; }
+//         public bool Contains(System.Diagnostics.ProcessThread thread) { throw null; }
+//         public void CopyTo(System.Diagnostics.ProcessThread[] array, int index) { }
+//         public int IndexOf(System.Diagnostics.ProcessThread thread) { throw null; }
+//         public void Insert(int index, System.Diagnostics.ProcessThread thread) { }
+//         public void Remove(System.Diagnostics.ProcessThread thread) { }
+//     }
+// }
+// namespace System.Net
+// {
+//     public partial class WebClient : System.ComponentModel.Component
+//     {
+//         public WebClient() { }
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         public bool AllowReadStreamBuffering { get { throw null; } set { } }
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         public bool AllowWriteStreamBuffering { get { throw null; } set { } }
+//         public string BaseAddress { get { throw null; } set { } }
+//         public System.Net.Cache.RequestCachePolicy CachePolicy { get { throw null; } set { } }
+//         public System.Net.ICredentials Credentials { get { throw null; } set { } }
+//         public System.Text.Encoding Encoding { get { throw null; } set { } }
+//         public System.Net.WebHeaderCollection Headers { get { throw null; } set { } }
+//         public bool IsBusy { get { throw null; } }
+//         public System.Net.IWebProxy Proxy { get { throw null; } set { } }
+//         public System.Collections.Specialized.NameValueCollection QueryString { get { throw null; } set { } }
+//         public System.Net.WebHeaderCollection ResponseHeaders { get { throw null; } }
+//         public bool UseDefaultCredentials { get { throw null; } set { } }
+//         public event System.Net.DownloadDataCompletedEventHandler DownloadDataCompleted { add { } remove { } }
+//         public event System.ComponentModel.AsyncCompletedEventHandler DownloadFileCompleted { add { } remove { } }
+//         public event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged { add { } remove { } }
+//         public event System.Net.DownloadStringCompletedEventHandler DownloadStringCompleted { add { } remove { } }
+//         public event System.Net.OpenReadCompletedEventHandler OpenReadCompleted { add { } remove { } }
+//         public event System.Net.OpenWriteCompletedEventHandler OpenWriteCompleted { add { } remove { } }
+//         public event System.Net.UploadDataCompletedEventHandler UploadDataCompleted { add { } remove { } }
+//         public event System.Net.UploadFileCompletedEventHandler UploadFileCompleted { add { } remove { } }
+//         public event System.Net.UploadProgressChangedEventHandler UploadProgressChanged { add { } remove { } }
+//         public event System.Net.UploadStringCompletedEventHandler UploadStringCompleted { add { } remove { } }
+//         public event System.Net.UploadValuesCompletedEventHandler UploadValuesCompleted { add { } remove { } }
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         public event System.Net.WriteStreamClosedEventHandler WriteStreamClosed { add { } remove { } }
+//         public void CancelAsync() { }
+//         public byte[] DownloadData(string address) { throw null; }
+//         public byte[] DownloadData(System.Uri address) { throw null; }
+//         public void DownloadDataAsync(System.Uri address) { }
+//         public void DownloadDataAsync(System.Uri address, object userToken) { }
+//         public System.Threading.Tasks.Task<byte[]> DownloadDataTaskAsync(string address) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> DownloadDataTaskAsync(System.Uri address) { throw null; }
+//         public void DownloadFile(string address, string fileName) { }
+//         public void DownloadFile(System.Uri address, string fileName) { }
+//         public void DownloadFileAsync(System.Uri address, string fileName) { }
+//         public void DownloadFileAsync(System.Uri address, string fileName, object userToken) { }
+//         public System.Threading.Tasks.Task DownloadFileTaskAsync(string address, string fileName) { throw null; }
+//         public System.Threading.Tasks.Task DownloadFileTaskAsync(System.Uri address, string fileName) { throw null; }
+//         public string DownloadString(string address) { throw null; }
+//         public string DownloadString(System.Uri address) { throw null; }
+//         public void DownloadStringAsync(System.Uri address) { }
+//         public void DownloadStringAsync(System.Uri address, object userToken) { }
+//         public System.Threading.Tasks.Task<string> DownloadStringTaskAsync(string address) { throw null; }
+//         public System.Threading.Tasks.Task<string> DownloadStringTaskAsync(System.Uri address) { throw null; }
+//         protected virtual System.Net.WebRequest GetWebRequest(System.Uri address) { throw null; }
+//         protected virtual System.Net.WebResponse GetWebResponse(System.Net.WebRequest request) { throw null; }
+//         protected virtual System.Net.WebResponse GetWebResponse(System.Net.WebRequest request, System.IAsyncResult result) { throw null; }
+//         protected virtual void OnDownloadDataCompleted(System.Net.DownloadDataCompletedEventArgs e) { }
+//         protected virtual void OnDownloadFileCompleted(System.ComponentModel.AsyncCompletedEventArgs e) { }
+//         protected virtual void OnDownloadProgressChanged(System.Net.DownloadProgressChangedEventArgs e) { }
+//         protected virtual void OnDownloadStringCompleted(System.Net.DownloadStringCompletedEventArgs e) { }
+//         protected virtual void OnOpenReadCompleted(System.Net.OpenReadCompletedEventArgs e) { }
+//         protected virtual void OnOpenWriteCompleted(System.Net.OpenWriteCompletedEventArgs e) { }
+//         protected virtual void OnUploadDataCompleted(System.Net.UploadDataCompletedEventArgs e) { }
+//         protected virtual void OnUploadFileCompleted(System.Net.UploadFileCompletedEventArgs e) { }
+//         protected virtual void OnUploadProgressChanged(System.Net.UploadProgressChangedEventArgs e) { }
+//         protected virtual void OnUploadStringCompleted(System.Net.UploadStringCompletedEventArgs e) { }
+//         protected virtual void OnUploadValuesCompleted(System.Net.UploadValuesCompletedEventArgs e) { }
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         protected virtual void OnWriteStreamClosed(System.Net.WriteStreamClosedEventArgs e) { }
+//         public System.IO.Stream OpenRead(string address) { throw null; }
+//         public System.IO.Stream OpenRead(System.Uri address) { throw null; }
+//         public void OpenReadAsync(System.Uri address) { }
+//         public void OpenReadAsync(System.Uri address, object userToken) { }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenReadTaskAsync(string address) { throw null; }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenReadTaskAsync(System.Uri address) { throw null; }
+//         public System.IO.Stream OpenWrite(string address) { throw null; }
+//         public System.IO.Stream OpenWrite(string address, string method) { throw null; }
+//         public System.IO.Stream OpenWrite(System.Uri address) { throw null; }
+//         public System.IO.Stream OpenWrite(System.Uri address, string method) { throw null; }
+//         public void OpenWriteAsync(System.Uri address) { }
+//         public void OpenWriteAsync(System.Uri address, string method) { }
+//         public void OpenWriteAsync(System.Uri address, string method, object userToken) { }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(string address) { throw null; }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(string address, string method) { throw null; }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri address) { throw null; }
+//         public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri address, string method) { throw null; }
+//         public byte[] UploadData(string address, byte[] data) { throw null; }
+//         public byte[] UploadData(string address, string method, byte[] data) { throw null; }
+//         public byte[] UploadData(System.Uri address, byte[] data) { throw null; }
+//         public byte[] UploadData(System.Uri address, string method, byte[] data) { throw null; }
+//         public void UploadDataAsync(System.Uri address, byte[] data) { }
+//         public void UploadDataAsync(System.Uri address, string method, byte[] data) { }
+//         public void UploadDataAsync(System.Uri address, string method, byte[] data, object userToken) { }
+//         public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(string address, byte[] data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(string address, string method, byte[] data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(System.Uri address, byte[] data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(System.Uri address, string method, byte[] data) { throw null; }
+//         public byte[] UploadFile(string address, string fileName) { throw null; }
+//         public byte[] UploadFile(string address, string method, string fileName) { throw null; }
+//         public byte[] UploadFile(System.Uri address, string fileName) { throw null; }
+//         public byte[] UploadFile(System.Uri address, string method, string fileName) { throw null; }
+//         public void UploadFileAsync(System.Uri address, string fileName) { }
+//         public void UploadFileAsync(System.Uri address, string method, string fileName) { }
+//         public void UploadFileAsync(System.Uri address, string method, string fileName, object userToken) { }
+//         public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(string address, string fileName) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(string address, string method, string fileName) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(System.Uri address, string fileName) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(System.Uri address, string method, string fileName) { throw null; }
+//         public string UploadString(string address, string data) { throw null; }
+//         public string UploadString(string address, string method, string data) { throw null; }
+//         public string UploadString(System.Uri address, string data) { throw null; }
+//         public string UploadString(System.Uri address, string method, string data) { throw null; }
+//         public void UploadStringAsync(System.Uri address, string data) { }
+//         public void UploadStringAsync(System.Uri address, string method, string data) { }
+//         public void UploadStringAsync(System.Uri address, string method, string data, object userToken) { }
+//         public System.Threading.Tasks.Task<string> UploadStringTaskAsync(string address, string data) { throw null; }
+//         public System.Threading.Tasks.Task<string> UploadStringTaskAsync(string address, string method, string data) { throw null; }
+//         public System.Threading.Tasks.Task<string> UploadStringTaskAsync(System.Uri address, string data) { throw null; }
+//         public System.Threading.Tasks.Task<string> UploadStringTaskAsync(System.Uri address, string method, string data) { throw null; }
+//         public byte[] UploadValues(string address, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public byte[] UploadValues(string address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public byte[] UploadValues(System.Uri address, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public byte[] UploadValues(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public void UploadValuesAsync(System.Uri address, System.Collections.Specialized.NameValueCollection data) { }
+//         public void UploadValuesAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { }
+//         public void UploadValuesAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data, object userToken) { }
+//         public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(string address, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(string address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(System.Uri address, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//         public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
+//     }
+// }
+// namespace System.Net.NetworkInformation
+// {
+//     public partial class Ping : System.ComponentModel.Component
+//     {
+//         public Ping() { }
+//         public event System.Net.NetworkInformation.PingCompletedEventHandler PingCompleted { add { } remove { } }
+//         protected override void Dispose(bool disposing) { }
+//         protected void OnPingCompleted(System.Net.NetworkInformation.PingCompletedEventArgs e) { }
+//         public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout, byte[] buffer) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout, byte[] buffer) { throw null; }
+//         public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
+//         public void SendAsync(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken) { }
+//         public void SendAsync(System.Net.IPAddress address, int timeout, byte[] buffer, object userToken) { }
+//         public void SendAsync(System.Net.IPAddress address, int timeout, object userToken) { }
+//         public void SendAsync(System.Net.IPAddress address, object userToken) { }
+//         public void SendAsync(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken) { }
+//         public void SendAsync(string hostNameOrAddress, int timeout, byte[] buffer, object userToken) { }
+//         public void SendAsync(string hostNameOrAddress, int timeout, object userToken) { }
+//         public void SendAsync(string hostNameOrAddress, object userToken) { }
+//         public void SendAsyncCancel() { }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout, byte[] buffer) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout, byte[] buffer) { throw null; }
+//         public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
+//     }
+// }
+// namespace System.IO
+// {
+//     [System.ComponentModel.DefaultEventAttribute("Changed")]
+//     [System.IO.IODescriptionAttribute("FileSystemWatcherDesc")]
+//     public partial class FileSystemWatcher : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize
+//     {
+//         public FileSystemWatcher() { }
+//         public FileSystemWatcher(string path) { }
+//         public FileSystemWatcher(string path, string filter) { }
+//         [System.ComponentModel.DefaultValueAttribute(false)]
+//         [System.IO.IODescriptionAttribute("FSW_Enabled")]
+//         public bool EnableRaisingEvents { get { throw null; } set { } }
+//         [System.ComponentModel.DefaultValueAttribute("*.*")]
+//         [System.ComponentModel.SettingsBindableAttribute(true)]
+//         [System.IO.IODescriptionAttribute("FSW_Filter")]
+//         public string Filter { get { throw null; } set { } }
+//         [System.ComponentModel.DefaultValueAttribute(false)]
+//         [System.IO.IODescriptionAttribute("FSW_IncludeSubdirectories")]
+//         public bool IncludeSubdirectories { get { throw null; } set { } }
+//         [System.ComponentModel.BrowsableAttribute(false)]
+//         [System.ComponentModel.DefaultValueAttribute(8192)]
+//         public int InternalBufferSize { get { throw null; } set { } }
+//         [System.ComponentModel.DefaultValueAttribute((System.IO.NotifyFilters)(19))]
+//         [System.IO.IODescriptionAttribute("FSW_ChangedFilter")]
+//         public System.IO.NotifyFilters NotifyFilter { get { throw null; } set { } }
+//         [System.ComponentModel.DefaultValueAttribute("")]
+//         [System.ComponentModel.SettingsBindableAttribute(true)]
+//         [System.IO.IODescriptionAttribute("FSW_Path")]
+//         public string Path { get { throw null; } set { } }
+//         [System.ComponentModel.BrowsableAttribute(false)]
+//         public override System.ComponentModel.ISite Site { get { throw null; } set { } }
+//         [System.ComponentModel.BrowsableAttribute(false)]
+//         [System.ComponentModel.DefaultValueAttribute(null)]
+//         [System.IO.IODescriptionAttribute("FSW_SynchronizingObject")]
+//         public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
+//         [System.IO.IODescriptionAttribute("FSW_Changed")]
+//         public event System.IO.FileSystemEventHandler Changed { add { } remove { } }
+//         [System.IO.IODescriptionAttribute("FSW_Created")]
+//         public event System.IO.FileSystemEventHandler Created { add { } remove { } }
+//         [System.IO.IODescriptionAttribute("FSW_Deleted")]
+//         public event System.IO.FileSystemEventHandler Deleted { add { } remove { } }
+//         [System.ComponentModel.BrowsableAttribute(false)]
+//         public event System.IO.ErrorEventHandler Error { add { } remove { } }
+//         [System.IO.IODescriptionAttribute("FSW_Renamed")]
+//         public event System.IO.RenamedEventHandler Renamed { add { } remove { } }
+//         public void BeginInit() { }
+//         protected override void Dispose(bool disposing) { }
+//         public void EndInit() { }
+//         protected void OnChanged(System.IO.FileSystemEventArgs e) { }
+//         protected void OnCreated(System.IO.FileSystemEventArgs e) { }
+//         protected void OnDeleted(System.IO.FileSystemEventArgs e) { }
+//         protected void OnError(System.IO.ErrorEventArgs e) { }
+//         protected void OnRenamed(System.IO.RenamedEventArgs e) { }
+//         public System.IO.WaitForChangedResult WaitForChanged(System.IO.WatcherChangeTypes changeType) { throw null; }
+//         public System.IO.WaitForChangedResult WaitForChanged(System.IO.WatcherChangeTypes changeType, int timeout) { throw null; }
+//     } 
+// }
+
+// // APIs required outside of component model:
+// namespace System.IO
+// {
+//     [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
+//     public partial class IODescriptionAttribute : System.ComponentModel.DescriptionAttribute
+//     {
+//         public IODescriptionAttribute(string description) { }
+//         public override string Description { get { throw null; } }
+//     }
+// }
+
+// namespace System.Net
+// {
+//     public partial class OpenReadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal OpenReadCompletedEventArgs() : base(null, false, null) { }
+//         public System.IO.Stream Result { get { throw null; } }
+//     }
+//     public delegate void OpenReadCompletedEventHandler(object sender, System.Net.OpenReadCompletedEventArgs e);
+//     public partial class OpenWriteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal OpenWriteCompletedEventArgs() : base(null, false, null) { }
+//         public System.IO.Stream Result { get { throw null; } }
+//     }
+//     public delegate void OpenWriteCompletedEventHandler(object sender, System.Net.OpenWriteCompletedEventArgs e);
+//     public partial class DownloadDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal DownloadDataCompletedEventArgs() : base(null, false, null) { }
+//         public byte[] Result { get { throw null; } }
+//     }
+//     public delegate void DownloadDataCompletedEventHandler(object sender, System.Net.DownloadDataCompletedEventArgs e);
+//     public partial class DownloadProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs
+//     {
+//         internal DownloadProgressChangedEventArgs() : base (default(int), default(object)) { }
+//         public long BytesReceived { get { throw null; } }
+//         public long TotalBytesToReceive { get { throw null; } }
+//     }
+//     public delegate void DownloadProgressChangedEventHandler(object sender, System.Net.DownloadProgressChangedEventArgs e);
+//     public partial class DownloadStringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal DownloadStringCompletedEventArgs() : base(null, false, null) { }
+//         public string Result { get { throw null; } }
+//     }
+//     public delegate void DownloadStringCompletedEventHandler(object sender, System.Net.DownloadStringCompletedEventArgs e);
+
+//     public partial class UploadDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal UploadDataCompletedEventArgs() : base(null, false, null) { }
+//         public byte[] Result { get { throw null; } }
+//     }
+//     public delegate void UploadDataCompletedEventHandler(object sender, System.Net.UploadDataCompletedEventArgs e);
+//     public partial class UploadProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs
+//     {
+//         internal UploadProgressChangedEventArgs() : base (default(int), default(object)) { }
+//         public long BytesReceived { get { throw null; } }
+//         public long BytesSent { get { throw null; } }
+//         public long TotalBytesToReceive { get { throw null; } }
+//         public long TotalBytesToSend { get { throw null; } }
+//     }
+//     public delegate void UploadProgressChangedEventHandler(object sender, System.Net.UploadProgressChangedEventArgs e);
+//     public partial class UploadStringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal UploadStringCompletedEventArgs() : base(null, false, null) { }
+//         public string Result { get { throw null; } }
+//     }
+//     public delegate void UploadStringCompletedEventHandler(object sender, System.Net.UploadStringCompletedEventArgs e);
+//     public partial class UploadFileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal UploadFileCompletedEventArgs() : base(null, false, null) { }
+//         public byte[] Result { get { throw null; } }
+//     }
+//     public delegate void UploadFileCompletedEventHandler(object sender, System.Net.UploadFileCompletedEventArgs e);
+//     public partial class UploadValuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal UploadValuesCompletedEventArgs() : base(null, false, null) { }
+//         public byte[] Result { get { throw null; } }
+//     }
+//     public delegate void UploadValuesCompletedEventHandler(object sender, System.Net.UploadValuesCompletedEventArgs e);
+
+//     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//     public partial class WriteStreamClosedEventArgs : System.EventArgs
+//     {
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         public WriteStreamClosedEventArgs() { }
+//         [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//         [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
+//         public System.Exception Error { get { throw null; } }
+//     }
+//     [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
+//     public delegate void WriteStreamClosedEventHandler(object sender, System.Net.WriteStreamClosedEventArgs e); 
+// }
+
+// namespace System.Net.NetworkInformation
+// {
+//     public partial class PingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+//     {
+//         internal PingCompletedEventArgs() : base(null, false, null) { }
+//         public System.Net.NetworkInformation.PingReply Reply { get { throw null; } }
+//     }
+//     public delegate void PingCompletedEventHandler(object sender, System.Net.NetworkInformation.PingCompletedEventArgs e);
+// }
+
+// namespace System.Net.Cache
+// {
+//     public enum RequestCacheLevel
+//     {
+//         BypassCache = 1,
+//         CacheIfAvailable = 3,
+//         CacheOnly = 2,
+//         Default = 0,
+//         NoCacheNoStore = 6,
+//         Reload = 5,
+//         Revalidate = 4,
+//     }
+//     public partial class RequestCachePolicy
+//     {
+//         public RequestCachePolicy() { }
+//         public RequestCachePolicy(System.Net.Cache.RequestCacheLevel level) { }
+//         public System.Net.Cache.RequestCacheLevel Level { get { throw null; } }
+//         public override string ToString() { throw null; }
+//     }
+// }
+
+//namespace System
+//{
+    // public partial class SystemException : System.Exception
     // {
-    //     public Process() { }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public int BasePriority { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DefaultValueAttribute(false)]
-    //     public bool EnableRaisingEvents { get { throw null; } set { } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public int ExitCode { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.DateTime ExitTime { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IntPtr Handle { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public int HandleCount { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public bool HasExited { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public int Id { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public string MachineName { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.Diagnostics.ProcessModule MainModule { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IntPtr MainWindowHandle { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public string MainWindowTitle { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IntPtr MaxWorkingSet { get { throw null; } set { } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IntPtr MinWorkingSet { get { throw null; } set { } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.Diagnostics.ProcessModuleCollection Modules { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.NonpagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int NonpagedSystemMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long NonpagedSystemMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PagedMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PagedMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PagedSystemMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PagedSystemMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PagedSystemMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakPagedMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PeakPagedMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PeakPagedMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakVirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PeakVirtualMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PeakVirtualMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PeakWorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PeakWorkingSet { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PeakWorkingSet64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public bool PriorityBoostEnabled { get { throw null; } set { } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.Diagnostics.ProcessPriorityClass PriorityClass { get { throw null; } set { } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.PrivateMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int PrivateMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long PrivateMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.TimeSpan PrivilegedProcessorTime { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public string ProcessName { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IntPtr ProcessorAffinity { get { throw null; } set { } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public bool Responding { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public int SessionId { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IO.StreamReader StandardError { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IO.StreamWriter StandardInput { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.IO.StreamReader StandardOutput { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(2))]
-    //     public System.Diagnostics.ProcessStartInfo StartInfo { get { throw null; } set { } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.DateTime StartTime { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DefaultValueAttribute(null)]
-    //     public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.Diagnostics.ProcessThreadCollection Threads { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.TimeSpan TotalProcessorTime { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public System.TimeSpan UserProcessorTime { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.VirtualMemorySize64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int VirtualMemorySize { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long VirtualMemorySize64 { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     [System.ObsoleteAttribute("This property has been deprecated.  Please use System.Diagnostics.Process.WorkingSet64 instead.  http://go.microsoft.com/fwlink/?linkid=14202")]
-    //     public int WorkingSet { get { throw null; } }
-    //     [System.ComponentModel.DesignerSerializationVisibilityAttribute((System.ComponentModel.DesignerSerializationVisibility)(0))]
-    //     public long WorkingSet64 { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(true)]
-    //     public event System.Diagnostics.DataReceivedEventHandler ErrorDataReceived { add { } remove { } }
-    //     [System.ComponentModel.CategoryAttribute("Behavior")]
-    //     public event System.EventHandler Exited { add { } remove { } }
-    //     [System.ComponentModel.BrowsableAttribute(true)]
-    //     public event System.Diagnostics.DataReceivedEventHandler OutputDataReceived { add { } remove { } }
-    //     public void BeginErrorReadLine() { }
-    //     public void BeginOutputReadLine() { }
-    //     public void CancelErrorRead() { }
-    //     public void CancelOutputRead() { }
-    //     public void Close() { }
-    //     public bool CloseMainWindow() { throw null; }
-    //     protected override void Dispose(bool disposing) { }
-    //     public static void EnterDebugMode() { }
-    //     public static System.Diagnostics.Process GetCurrentProcess() { throw null; }
-    //     public static System.Diagnostics.Process GetProcessById(int processId) { throw null; }
-    //     public static System.Diagnostics.Process GetProcessById(int processId, string machineName) { throw null; }
-    //     public static System.Diagnostics.Process[] GetProcesses() { throw null; }
-    //     public static System.Diagnostics.Process[] GetProcesses(string machineName) { throw null; }
-    //     public static System.Diagnostics.Process[] GetProcessesByName(string processName) { throw null; }
-    //     public static System.Diagnostics.Process[] GetProcessesByName(string processName, string machineName) { throw null; }
-    //     public void Kill() { }
-    //     public static void LeaveDebugMode() { }
-    //     protected void OnExited() { }
-    //     public void Refresh() { }
-    //     public bool Start() { throw null; }
-    //     public static System.Diagnostics.Process Start(System.Diagnostics.ProcessStartInfo startInfo) { throw null; }
-    //     public static System.Diagnostics.Process Start(string fileName) { throw null; }
-    //     public static System.Diagnostics.Process Start(string fileName, string arguments) { throw null; }
-    //     public static System.Diagnostics.Process Start(string fileName, string userName, System.Security.SecureString password, string domain) { throw null; }
-    //     public static System.Diagnostics.Process Start(string fileName, string arguments, string userName, System.Security.SecureString password, string domain) { throw null; }
-    //     public override string ToString() { throw null; }
-    //     public void WaitForExit() { }
-    //     public bool WaitForExit(int milliseconds) { throw null; }
-    //     public bool WaitForInputIdle() { throw null; }
-    //     public bool WaitForInputIdle(int milliseconds) { throw null; }
+    //     public SystemException() { }
+    //     protected SystemException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
+    //     public SystemException(string message) { }
+    //     public SystemException(string message, System.Exception innerException) { }
     // }
-    // public partial class ProcessModule : System.ComponentModel.Component
+
+    // public partial interface ICloneable
     // {
-    //     internal ProcessModule() { }
-    //     public System.IntPtr BaseAddress { get { throw null; } }
-    //     public System.IntPtr EntryPointAddress { get { throw null; } }
-    //     public string FileName { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     public System.Diagnostics.FileVersionInfo FileVersionInfo { get { throw null; } }
-    //     public int ModuleMemorySize { get { throw null; } }
-    //     public string ModuleName { get { throw null; } }
-    //     public override string ToString() { throw null; }
+    //     object Clone();
     // }
-    public partial class ProcessModuleCollection : System.Collections.ReadOnlyCollectionBase
-    {
-        protected ProcessModuleCollection() { }
-        public ProcessModuleCollection(System.Diagnostics.ProcessModule[] processModules) { }
-        public System.Diagnostics.ProcessModule this[int index] { get { throw null; } }
-        public bool Contains(System.Diagnostics.ProcessModule module) { throw null; }
-        public void CopyTo(System.Diagnostics.ProcessModule[] array, int index) { }
-        public int IndexOf(System.Diagnostics.ProcessModule module) { throw null; }
-    }    
-    public enum ProcessPriorityClass
-    {
-        AboveNormal = 32768,
-        BelowNormal = 16384,
-        High = 128,
-        Idle = 64,
-        Normal = 32,
-        RealTime = 256,
-    }    
-    // public partial class ProcessThread : System.ComponentModel.Component
-    // {
-    //     internal ProcessThread() { }
-    //     public int BasePriority { get { throw null; } }
-    //     public int CurrentPriority { get { throw null; } }
-    //     public int Id { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     public int IdealProcessor { set { } }
-    //     public bool PriorityBoostEnabled { get { throw null; } set { } }
-    //     public System.Diagnostics.ThreadPriorityLevel PriorityLevel { get { throw null; } set { } }
-    //     public System.TimeSpan PrivilegedProcessorTime { get { throw null; } }
-    //     [System.ComponentModel.BrowsableAttribute(false)]
-    //     public System.IntPtr ProcessorAffinity { set { } }
-    //     public System.IntPtr StartAddress { get { throw null; } }
-    //     public System.DateTime StartTime { get { throw null; } }
-    //     public System.Diagnostics.ThreadState ThreadState { get { throw null; } }
-    //     public System.TimeSpan TotalProcessorTime { get { throw null; } }
-    //     public System.TimeSpan UserProcessorTime { get { throw null; } }
-    //     public System.Diagnostics.ThreadWaitReason WaitReason { get { throw null; } }
-    //     public void ResetIdealProcessor() { }
-    // }
-    public partial class ProcessThreadCollection : System.Collections.ReadOnlyCollectionBase
-    {
-        protected ProcessThreadCollection() { }
-        public ProcessThreadCollection(System.Diagnostics.ProcessThread[] processThreads) { }
-        public System.Diagnostics.ProcessThread this[int index] { get { throw null; } }
-        public int Add(System.Diagnostics.ProcessThread thread) { throw null; }
-        public bool Contains(System.Diagnostics.ProcessThread thread) { throw null; }
-        public void CopyTo(System.Diagnostics.ProcessThread[] array, int index) { }
-        public int IndexOf(System.Diagnostics.ProcessThread thread) { throw null; }
-        public void Insert(int index, System.Diagnostics.ProcessThread thread) { }
-        public void Remove(System.Diagnostics.ProcessThread thread) { }
-    }
-}
-namespace System.Net
-{
-    public partial class WebClient : System.ComponentModel.Component
-    {
-        public WebClient() { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        public bool AllowReadStreamBuffering { get { throw null; } set { } }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        public bool AllowWriteStreamBuffering { get { throw null; } set { } }
-        public string BaseAddress { get { throw null; } set { } }
-        public System.Net.Cache.RequestCachePolicy CachePolicy { get { throw null; } set { } }
-        public System.Net.ICredentials Credentials { get { throw null; } set { } }
-        public System.Text.Encoding Encoding { get { throw null; } set { } }
-        public System.Net.WebHeaderCollection Headers { get { throw null; } set { } }
-        public bool IsBusy { get { throw null; } }
-        public System.Net.IWebProxy Proxy { get { throw null; } set { } }
-        public System.Collections.Specialized.NameValueCollection QueryString { get { throw null; } set { } }
-        public System.Net.WebHeaderCollection ResponseHeaders { get { throw null; } }
-        public bool UseDefaultCredentials { get { throw null; } set { } }
-        public event System.Net.DownloadDataCompletedEventHandler DownloadDataCompleted { add { } remove { } }
-        public event System.ComponentModel.AsyncCompletedEventHandler DownloadFileCompleted { add { } remove { } }
-        public event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged { add { } remove { } }
-        public event System.Net.DownloadStringCompletedEventHandler DownloadStringCompleted { add { } remove { } }
-        public event System.Net.OpenReadCompletedEventHandler OpenReadCompleted { add { } remove { } }
-        public event System.Net.OpenWriteCompletedEventHandler OpenWriteCompleted { add { } remove { } }
-        public event System.Net.UploadDataCompletedEventHandler UploadDataCompleted { add { } remove { } }
-        public event System.Net.UploadFileCompletedEventHandler UploadFileCompleted { add { } remove { } }
-        public event System.Net.UploadProgressChangedEventHandler UploadProgressChanged { add { } remove { } }
-        public event System.Net.UploadStringCompletedEventHandler UploadStringCompleted { add { } remove { } }
-        public event System.Net.UploadValuesCompletedEventHandler UploadValuesCompleted { add { } remove { } }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        public event System.Net.WriteStreamClosedEventHandler WriteStreamClosed { add { } remove { } }
-        public void CancelAsync() { }
-        public byte[] DownloadData(string address) { throw null; }
-        public byte[] DownloadData(System.Uri address) { throw null; }
-        public void DownloadDataAsync(System.Uri address) { }
-        public void DownloadDataAsync(System.Uri address, object userToken) { }
-        public System.Threading.Tasks.Task<byte[]> DownloadDataTaskAsync(string address) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> DownloadDataTaskAsync(System.Uri address) { throw null; }
-        public void DownloadFile(string address, string fileName) { }
-        public void DownloadFile(System.Uri address, string fileName) { }
-        public void DownloadFileAsync(System.Uri address, string fileName) { }
-        public void DownloadFileAsync(System.Uri address, string fileName, object userToken) { }
-        public System.Threading.Tasks.Task DownloadFileTaskAsync(string address, string fileName) { throw null; }
-        public System.Threading.Tasks.Task DownloadFileTaskAsync(System.Uri address, string fileName) { throw null; }
-        public string DownloadString(string address) { throw null; }
-        public string DownloadString(System.Uri address) { throw null; }
-        public void DownloadStringAsync(System.Uri address) { }
-        public void DownloadStringAsync(System.Uri address, object userToken) { }
-        public System.Threading.Tasks.Task<string> DownloadStringTaskAsync(string address) { throw null; }
-        public System.Threading.Tasks.Task<string> DownloadStringTaskAsync(System.Uri address) { throw null; }
-        protected virtual System.Net.WebRequest GetWebRequest(System.Uri address) { throw null; }
-        protected virtual System.Net.WebResponse GetWebResponse(System.Net.WebRequest request) { throw null; }
-        protected virtual System.Net.WebResponse GetWebResponse(System.Net.WebRequest request, System.IAsyncResult result) { throw null; }
-        protected virtual void OnDownloadDataCompleted(System.Net.DownloadDataCompletedEventArgs e) { }
-        protected virtual void OnDownloadFileCompleted(System.ComponentModel.AsyncCompletedEventArgs e) { }
-        protected virtual void OnDownloadProgressChanged(System.Net.DownloadProgressChangedEventArgs e) { }
-        protected virtual void OnDownloadStringCompleted(System.Net.DownloadStringCompletedEventArgs e) { }
-        protected virtual void OnOpenReadCompleted(System.Net.OpenReadCompletedEventArgs e) { }
-        protected virtual void OnOpenWriteCompleted(System.Net.OpenWriteCompletedEventArgs e) { }
-        protected virtual void OnUploadDataCompleted(System.Net.UploadDataCompletedEventArgs e) { }
-        protected virtual void OnUploadFileCompleted(System.Net.UploadFileCompletedEventArgs e) { }
-        protected virtual void OnUploadProgressChanged(System.Net.UploadProgressChangedEventArgs e) { }
-        protected virtual void OnUploadStringCompleted(System.Net.UploadStringCompletedEventArgs e) { }
-        protected virtual void OnUploadValuesCompleted(System.Net.UploadValuesCompletedEventArgs e) { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        protected virtual void OnWriteStreamClosed(System.Net.WriteStreamClosedEventArgs e) { }
-        public System.IO.Stream OpenRead(string address) { throw null; }
-        public System.IO.Stream OpenRead(System.Uri address) { throw null; }
-        public void OpenReadAsync(System.Uri address) { }
-        public void OpenReadAsync(System.Uri address, object userToken) { }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenReadTaskAsync(string address) { throw null; }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenReadTaskAsync(System.Uri address) { throw null; }
-        public System.IO.Stream OpenWrite(string address) { throw null; }
-        public System.IO.Stream OpenWrite(string address, string method) { throw null; }
-        public System.IO.Stream OpenWrite(System.Uri address) { throw null; }
-        public System.IO.Stream OpenWrite(System.Uri address, string method) { throw null; }
-        public void OpenWriteAsync(System.Uri address) { }
-        public void OpenWriteAsync(System.Uri address, string method) { }
-        public void OpenWriteAsync(System.Uri address, string method, object userToken) { }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(string address) { throw null; }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(string address, string method) { throw null; }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri address) { throw null; }
-        public System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri address, string method) { throw null; }
-        public byte[] UploadData(string address, byte[] data) { throw null; }
-        public byte[] UploadData(string address, string method, byte[] data) { throw null; }
-        public byte[] UploadData(System.Uri address, byte[] data) { throw null; }
-        public byte[] UploadData(System.Uri address, string method, byte[] data) { throw null; }
-        public void UploadDataAsync(System.Uri address, byte[] data) { }
-        public void UploadDataAsync(System.Uri address, string method, byte[] data) { }
-        public void UploadDataAsync(System.Uri address, string method, byte[] data, object userToken) { }
-        public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(string address, byte[] data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(string address, string method, byte[] data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(System.Uri address, byte[] data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadDataTaskAsync(System.Uri address, string method, byte[] data) { throw null; }
-        public byte[] UploadFile(string address, string fileName) { throw null; }
-        public byte[] UploadFile(string address, string method, string fileName) { throw null; }
-        public byte[] UploadFile(System.Uri address, string fileName) { throw null; }
-        public byte[] UploadFile(System.Uri address, string method, string fileName) { throw null; }
-        public void UploadFileAsync(System.Uri address, string fileName) { }
-        public void UploadFileAsync(System.Uri address, string method, string fileName) { }
-        public void UploadFileAsync(System.Uri address, string method, string fileName, object userToken) { }
-        public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(string address, string fileName) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(string address, string method, string fileName) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(System.Uri address, string fileName) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadFileTaskAsync(System.Uri address, string method, string fileName) { throw null; }
-        public string UploadString(string address, string data) { throw null; }
-        public string UploadString(string address, string method, string data) { throw null; }
-        public string UploadString(System.Uri address, string data) { throw null; }
-        public string UploadString(System.Uri address, string method, string data) { throw null; }
-        public void UploadStringAsync(System.Uri address, string data) { }
-        public void UploadStringAsync(System.Uri address, string method, string data) { }
-        public void UploadStringAsync(System.Uri address, string method, string data, object userToken) { }
-        public System.Threading.Tasks.Task<string> UploadStringTaskAsync(string address, string data) { throw null; }
-        public System.Threading.Tasks.Task<string> UploadStringTaskAsync(string address, string method, string data) { throw null; }
-        public System.Threading.Tasks.Task<string> UploadStringTaskAsync(System.Uri address, string data) { throw null; }
-        public System.Threading.Tasks.Task<string> UploadStringTaskAsync(System.Uri address, string method, string data) { throw null; }
-        public byte[] UploadValues(string address, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public byte[] UploadValues(string address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public byte[] UploadValues(System.Uri address, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public byte[] UploadValues(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public void UploadValuesAsync(System.Uri address, System.Collections.Specialized.NameValueCollection data) { }
-        public void UploadValuesAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { }
-        public void UploadValuesAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data, object userToken) { }
-        public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(string address, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(string address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(System.Uri address, System.Collections.Specialized.NameValueCollection data) { throw null; }
-        public System.Threading.Tasks.Task<byte[]> UploadValuesTaskAsync(System.Uri address, string method, System.Collections.Specialized.NameValueCollection data) { throw null; }
-    }
-}
-namespace System.Net.NetworkInformation
-{
-    public partial class Ping : System.ComponentModel.Component
-    {
-        public Ping() { }
-        public event System.Net.NetworkInformation.PingCompletedEventHandler PingCompleted { add { } remove { } }
-        protected override void Dispose(bool disposing) { }
-        protected void OnPingCompleted(System.Net.NetworkInformation.PingCompletedEventArgs e) { }
-        public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout, byte[] buffer) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout, byte[] buffer) { throw null; }
-        public System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
-        public void SendAsync(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken) { }
-        public void SendAsync(System.Net.IPAddress address, int timeout, byte[] buffer, object userToken) { }
-        public void SendAsync(System.Net.IPAddress address, int timeout, object userToken) { }
-        public void SendAsync(System.Net.IPAddress address, object userToken) { }
-        public void SendAsync(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken) { }
-        public void SendAsync(string hostNameOrAddress, int timeout, byte[] buffer, object userToken) { }
-        public void SendAsync(string hostNameOrAddress, int timeout, object userToken) { }
-        public void SendAsync(string hostNameOrAddress, object userToken) { }
-        public void SendAsyncCancel() { }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout, byte[] buffer) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout, byte[] buffer) { throw null; }
-        public System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options) { throw null; }
-    }
-}
-namespace System.IO
-{
-    [System.ComponentModel.DefaultEventAttribute("Changed")]
-    [System.IO.IODescriptionAttribute("FileSystemWatcherDesc")]
-    public partial class FileSystemWatcher : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize
-    {
-        public FileSystemWatcher() { }
-        public FileSystemWatcher(string path) { }
-        public FileSystemWatcher(string path, string filter) { }
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        [System.IO.IODescriptionAttribute("FSW_Enabled")]
-        public bool EnableRaisingEvents { get { throw null; } set { } }
-        [System.ComponentModel.DefaultValueAttribute("*.*")]
-        [System.ComponentModel.SettingsBindableAttribute(true)]
-        [System.IO.IODescriptionAttribute("FSW_Filter")]
-        public string Filter { get { throw null; } set { } }
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        [System.IO.IODescriptionAttribute("FSW_IncludeSubdirectories")]
-        public bool IncludeSubdirectories { get { throw null; } set { } }
-        [System.ComponentModel.BrowsableAttribute(false)]
-        [System.ComponentModel.DefaultValueAttribute(8192)]
-        public int InternalBufferSize { get { throw null; } set { } }
-        [System.ComponentModel.DefaultValueAttribute((System.IO.NotifyFilters)(19))]
-        [System.IO.IODescriptionAttribute("FSW_ChangedFilter")]
-        public System.IO.NotifyFilters NotifyFilter { get { throw null; } set { } }
-        [System.ComponentModel.DefaultValueAttribute("")]
-        [System.ComponentModel.SettingsBindableAttribute(true)]
-        [System.IO.IODescriptionAttribute("FSW_Path")]
-        public string Path { get { throw null; } set { } }
-        [System.ComponentModel.BrowsableAttribute(false)]
-        public override System.ComponentModel.ISite Site { get { throw null; } set { } }
-        [System.ComponentModel.BrowsableAttribute(false)]
-        [System.ComponentModel.DefaultValueAttribute(null)]
-        [System.IO.IODescriptionAttribute("FSW_SynchronizingObject")]
-        public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get { throw null; } set { } }
-        [System.IO.IODescriptionAttribute("FSW_Changed")]
-        public event System.IO.FileSystemEventHandler Changed { add { } remove { } }
-        [System.IO.IODescriptionAttribute("FSW_Created")]
-        public event System.IO.FileSystemEventHandler Created { add { } remove { } }
-        [System.IO.IODescriptionAttribute("FSW_Deleted")]
-        public event System.IO.FileSystemEventHandler Deleted { add { } remove { } }
-        [System.ComponentModel.BrowsableAttribute(false)]
-        public event System.IO.ErrorEventHandler Error { add { } remove { } }
-        [System.IO.IODescriptionAttribute("FSW_Renamed")]
-        public event System.IO.RenamedEventHandler Renamed { add { } remove { } }
-        public void BeginInit() { }
-        protected override void Dispose(bool disposing) { }
-        public void EndInit() { }
-        protected void OnChanged(System.IO.FileSystemEventArgs e) { }
-        protected void OnCreated(System.IO.FileSystemEventArgs e) { }
-        protected void OnDeleted(System.IO.FileSystemEventArgs e) { }
-        protected void OnError(System.IO.ErrorEventArgs e) { }
-        protected void OnRenamed(System.IO.RenamedEventArgs e) { }
-        public System.IO.WaitForChangedResult WaitForChanged(System.IO.WatcherChangeTypes changeType) { throw null; }
-        public System.IO.WaitForChangedResult WaitForChanged(System.IO.WatcherChangeTypes changeType, int timeout) { throw null; }
-    } 
-}
+//}
 
-// APIs required outside of component model:
-namespace System.IO
-{
-    [System.AttributeUsageAttribute((System.AttributeTargets)(32767))]
-    public partial class IODescriptionAttribute : System.ComponentModel.DescriptionAttribute
-    {
-        public IODescriptionAttribute(string description) { }
-        public override string Description { get { throw null; } }
-    }
-}
-
-namespace System.Net
-{
-    public partial class OpenReadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal OpenReadCompletedEventArgs() : base(null, false, null) { }
-        public System.IO.Stream Result { get { throw null; } }
-    }
-    public delegate void OpenReadCompletedEventHandler(object sender, System.Net.OpenReadCompletedEventArgs e);
-    public partial class OpenWriteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal OpenWriteCompletedEventArgs() : base(null, false, null) { }
-        public System.IO.Stream Result { get { throw null; } }
-    }
-    public delegate void OpenWriteCompletedEventHandler(object sender, System.Net.OpenWriteCompletedEventArgs e);
-    public partial class DownloadDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal DownloadDataCompletedEventArgs() : base(null, false, null) { }
-        public byte[] Result { get { throw null; } }
-    }
-    public delegate void DownloadDataCompletedEventHandler(object sender, System.Net.DownloadDataCompletedEventArgs e);
-    public partial class DownloadProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs
-    {
-        internal DownloadProgressChangedEventArgs() : base (default(int), default(object)) { }
-        public long BytesReceived { get { throw null; } }
-        public long TotalBytesToReceive { get { throw null; } }
-    }
-    public delegate void DownloadProgressChangedEventHandler(object sender, System.Net.DownloadProgressChangedEventArgs e);
-    public partial class DownloadStringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal DownloadStringCompletedEventArgs() : base(null, false, null) { }
-        public string Result { get { throw null; } }
-    }
-    public delegate void DownloadStringCompletedEventHandler(object sender, System.Net.DownloadStringCompletedEventArgs e);
-
-    public partial class UploadDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal UploadDataCompletedEventArgs() : base(null, false, null) { }
-        public byte[] Result { get { throw null; } }
-    }
-    public delegate void UploadDataCompletedEventHandler(object sender, System.Net.UploadDataCompletedEventArgs e);
-    public partial class UploadProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs
-    {
-        internal UploadProgressChangedEventArgs() : base (default(int), default(object)) { }
-        public long BytesReceived { get { throw null; } }
-        public long BytesSent { get { throw null; } }
-        public long TotalBytesToReceive { get { throw null; } }
-        public long TotalBytesToSend { get { throw null; } }
-    }
-    public delegate void UploadProgressChangedEventHandler(object sender, System.Net.UploadProgressChangedEventArgs e);
-    public partial class UploadStringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal UploadStringCompletedEventArgs() : base(null, false, null) { }
-        public string Result { get { throw null; } }
-    }
-    public delegate void UploadStringCompletedEventHandler(object sender, System.Net.UploadStringCompletedEventArgs e);
-    public partial class UploadFileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal UploadFileCompletedEventArgs() : base(null, false, null) { }
-        public byte[] Result { get { throw null; } }
-    }
-    public delegate void UploadFileCompletedEventHandler(object sender, System.Net.UploadFileCompletedEventArgs e);
-    public partial class UploadValuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal UploadValuesCompletedEventArgs() : base(null, false, null) { }
-        public byte[] Result { get { throw null; } }
-    }
-    public delegate void UploadValuesCompletedEventHandler(object sender, System.Net.UploadValuesCompletedEventArgs e);
-
-    [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-    public partial class WriteStreamClosedEventArgs : System.EventArgs
-    {
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        public WriteStreamClosedEventArgs() { }
-        [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-        [System.ObsoleteAttribute("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]
-        public System.Exception Error { get { throw null; } }
-    }
-    [System.ComponentModel.EditorBrowsableAttribute((System.ComponentModel.EditorBrowsableState)(1))]
-    public delegate void WriteStreamClosedEventHandler(object sender, System.Net.WriteStreamClosedEventArgs e); 
-}
-
-namespace System.Net.NetworkInformation
-{
-    public partial class PingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-        internal PingCompletedEventArgs() : base(null, false, null) { }
-        public System.Net.NetworkInformation.PingReply Reply { get { throw null; } }
-    }
-    public delegate void PingCompletedEventHandler(object sender, System.Net.NetworkInformation.PingCompletedEventArgs e);
-}
-
-namespace System.Net.Cache
-{
-    public enum RequestCacheLevel
-    {
-        BypassCache = 1,
-        CacheIfAvailable = 3,
-        CacheOnly = 2,
-        Default = 0,
-        NoCacheNoStore = 6,
-        Reload = 5,
-        Revalidate = 4,
-    }
-    public partial class RequestCachePolicy
-    {
-        public RequestCachePolicy() { }
-        public RequestCachePolicy(System.Net.Cache.RequestCacheLevel level) { }
-        public System.Net.Cache.RequestCacheLevel Level { get { throw null; } }
-        public override string ToString() { throw null; }
-    }
-}
-
-namespace System
-{
-    public partial class SystemException : System.Exception
-    {
-        public SystemException() { }
-        protected SystemException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
-        public SystemException(string message) { }
-        public SystemException(string message, System.Exception innerException) { }
-    }
-
-    public partial interface ICloneable
-    {
-        object Clone();
-    }
-}
-
-namespace System.Runtime.InteropServices
-{
-    public partial class ExternalException : System.SystemException
-    {
-        public ExternalException() { }
-        protected ExternalException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
-        public ExternalException(string message) { }
-        public ExternalException(string message, System.Exception inner) { }
-        public ExternalException(string message, int errorCode) { }
-        public virtual int ErrorCode { get { throw null; } }
-        public override string ToString() { throw null; }
-    }
-}
+// namespace System.Runtime.InteropServices
+// {
+//     public partial class ExternalException : System.SystemException
+//     {
+//         public ExternalException() { }
+//         protected ExternalException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
+//         public ExternalException(string message) { }
+//         public ExternalException(string message, System.Exception inner) { }
+//         public ExternalException(string message, int errorCode) { }
+//         public virtual int ErrorCode { get { throw null; } }
+//         public override string ToString() { throw null; }
+//     }
+// }
 
 namespace System.Resources
 {
