@@ -173,6 +173,7 @@ namespace System.ComponentModel {
             return null;
         }
 
+        // TODO NETSTANDARD 2.0 -- Value is no available on RuntimeTypeHandle
         // /// <include file='doc\LicenseManager.uex' path='docs/doc[@for="LicenseManager.GetLicenseInteropHelperType"]/*' />
         // /// <devdoc>
         // ///     Retrieves the typehandle of the interop helper
