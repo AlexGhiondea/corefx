@@ -7,7 +7,6 @@
 
 namespace System.ComponentModel 
 {
-    //using System.ComponentModel.Design.Serialization;
     using System.Diagnostics;
     using System.Security.Permissions;
     using System.Threading;

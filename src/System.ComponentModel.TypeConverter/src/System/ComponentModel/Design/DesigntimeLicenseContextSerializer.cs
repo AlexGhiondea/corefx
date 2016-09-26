@@ -5,7 +5,6 @@
 //------------------------------------------------------------------------------
 
 namespace System.ComponentModel.Design {
-    //using System.Runtime.Remoting;
     using System.Runtime.Serialization.Formatters.Binary;
     using System.Runtime.Serialization;
     using System.Security;

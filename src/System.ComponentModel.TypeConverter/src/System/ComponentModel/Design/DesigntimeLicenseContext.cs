@@ -5,14 +5,12 @@
 //------------------------------------------------------------------------------
 
 namespace System.ComponentModel.Design {
-    //using System.Runtime.Remoting;
     using System.Diagnostics;
     using System;
     using Microsoft.Win32;
     using System.Net;
     using System.IO;
     using System.Reflection;
-//    using System.Reflection.Emit;
     using System.Collections;
     using System.ComponentModel;
     using System.Globalization;

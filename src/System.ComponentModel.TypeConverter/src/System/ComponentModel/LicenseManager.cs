@@ -5,8 +5,6 @@
 //------------------------------------------------------------------------------
 
 namespace System.ComponentModel {
-    //using System.Runtime.Remoting.Activation;
-    //using System.Runtime.Remoting;
     using System.Runtime.InteropServices;
     using System.Reflection;
     using System.Diagnostics;
