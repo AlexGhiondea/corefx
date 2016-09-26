@@ -88,10 +88,9 @@ namespace System.ComponentModel {
                 }
                 CultureInfo retVal = null;
 
-                CultureInfo currentUICulture = CultureInfo.CurrentUICulture; // original: CultureInfo.CurrentUICulture; 
+                CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
 
                 if (culture != null && culture.Equals(CultureInfo.InvariantCulture)) {
-                    //Thread.CurrentThread.CurrentUICulture = culture;
                     CultureInfo.CurrentUICulture = culture;
                 }
 
@@ -141,7 +140,6 @@ namespace System.ComponentModel {
                 }
 
                 finally {
-                    //Thread.CurrentThread.CurrentUICulture = culture;
                     CultureInfo.CurrentUICulture = culture;
                 }
                 
@@ -171,10 +169,9 @@ namespace System.ComponentModel {
             if (destinationType == typeof(string)) {
 
                 string retVal;
-                CultureInfo currentUICulture = CultureInfo.CurrentUICulture; //Thread.CurrentThread.CurrentUICulture = culture;
+                CultureInfo currentUICulture = CultureInfo.CurrentUICulture; 
 
                 if (culture != null && culture.Equals(CultureInfo.InvariantCulture)) {
-                    //Thread.CurrentThread.CurrentUICulture = culture;
                     CultureInfo.CurrentUICulture = culture;
                 }
 
@@ -187,7 +184,6 @@ namespace System.ComponentModel {
                     }
                 }
                 finally {
-                    //Thread.CurrentThread.CurrentUICulture = culture;
                     CultureInfo.CurrentUICulture = culture;
 
                 }
