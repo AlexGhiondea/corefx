@@ -50,9 +50,9 @@ namespace System.ComponentModel {
             return _isDataObject.GetHashCode();
         }
 
-        // /// <internalonly/>
-        // public override bool IsDefaultAttribute() {
-        //     return (this.Equals(Default));
-        // }
+        /// <internalonly/>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return (this.Equals(Default));
+        }
     }
 }

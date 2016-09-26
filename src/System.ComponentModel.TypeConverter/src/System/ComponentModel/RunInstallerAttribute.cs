@@ -97,12 +97,12 @@ namespace System.ComponentModel {
             return base.GetHashCode();
         }
 
-        // /// <include file='doc\RunInstallerAttribute.uex' path='docs/doc[@for="RunInstallerAttribute.IsDefaultAttribute"]/*' />
-        // /// <internalonly/>
-        // /// <devdoc>
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return (this.Equals(Default));
-        // }
+        /// <include file='doc\RunInstallerAttribute.uex' path='docs/doc[@for="RunInstallerAttribute.IsDefaultAttribute"]/*' />
+        /// <internalonly/>
+        /// <devdoc>
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return (this.Equals(Default));
+        }
     }
 }

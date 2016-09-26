@@ -131,12 +131,12 @@ namespace System.ComponentModel {
         }
 
 #if !SILVERLIGHT
-        // /// <devdoc>
-        // /// </devdoc>
-        // /// <internalonly/>
-        // public override bool IsDefaultAttribute() {
-        //     return (this.Equals(Default) || isDefault);
-        // }
+        /// <devdoc>
+        /// </devdoc>
+        /// <internalonly/>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return (this.Equals(Default) || isDefault);
+        }
 #endif
     }
 }

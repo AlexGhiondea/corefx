@@ -108,14 +108,14 @@ namespace System.ComponentModel {
             return base.GetHashCode();
         }
 
-        // /// <devdoc>
-        // ///    <para>
-        // ///       Gets whether this attribute is the default.
-        // ///    </para>
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return (this.Equals(Default));
-        // }
+        /// <devdoc>
+        ///    <para>
+        ///       Gets whether this attribute is the default.
+        ///    </para>
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return (this.Equals(Default));
+        }
         
         /// <devdoc>
         ///    <para>

@@ -114,12 +114,12 @@ namespace System.ComponentModel.Design {
             return base.GetHashCode();
         }
 
-        // /// <devdoc>
-        // /// Returns true if this Attribute's HelpKeyword is null.
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return this.Equals(Default);
-        // }
+        /// <devdoc>
+        /// Returns true if this Attribute's HelpKeyword is null.
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return this.Equals(Default);
+        }
     }
 }
 

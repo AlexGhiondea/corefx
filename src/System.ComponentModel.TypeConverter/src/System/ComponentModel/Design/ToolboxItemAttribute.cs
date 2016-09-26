@@ -41,14 +41,14 @@ namespace System.ComponentModel {
         /// </devdoc>
         public static readonly ToolboxItemAttribute None = new ToolboxItemAttribute(false);
 
-        // /// <devdoc>
-        // ///    <para>
-        // ///       Gets whether the attribute is the default attribute.
-        // ///    </para>
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return this.Equals(Default);
-        // }
+        /// <devdoc>
+        ///    <para>
+        ///       Gets whether the attribute is the default attribute.
+        ///    </para>
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return this.Equals(Default);
+        }
         
         /// <devdoc>
         ///    <para>

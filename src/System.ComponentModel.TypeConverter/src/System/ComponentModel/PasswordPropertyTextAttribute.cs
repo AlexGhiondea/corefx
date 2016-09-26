@@ -77,11 +77,11 @@ namespace System.ComponentModel {
             return base.GetHashCode();
         }
 
-        // /// <devdoc>
-        // ///     Gets a value indicating whether this attribute is set to true by default.
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return this.Equals(Default);
-        // }
+        /// <devdoc>
+        ///     Gets a value indicating whether this attribute is set to true by default.
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return this.Equals(Default);
+        }
     }
 }

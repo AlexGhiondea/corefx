@@ -81,11 +81,11 @@ namespace System.ComponentModel {
         }
 
 
-        // /// <devdoc>
-        // ///    <para>[To be supplied.]</para>
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return (this.Equals(Default) || isDefault);
-        // }
+        /// <devdoc>
+        ///    <para>[To be supplied.]</para>
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return (this.Equals(Default) || isDefault);
+        }
     }
 }

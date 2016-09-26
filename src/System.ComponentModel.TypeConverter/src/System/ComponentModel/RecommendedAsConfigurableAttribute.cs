@@ -89,11 +89,11 @@ namespace System.ComponentModel {
             return base.GetHashCode();
         }
 
-        // /// <internalonly/>
-        // /// <devdoc>
-        // /// </devdoc>
-        // public override bool IsDefaultAttribute() {
-        //     return !recommendedAsConfigurable;
-        // }
+        /// <internalonly/>
+        /// <devdoc>
+        /// </devdoc>
+        public /*TODO NETSTANDARD2.0 override*/ bool IsDefaultAttribute() {
+            return !recommendedAsConfigurable;
+        }
     }
 }
